@@ -1,9 +1,9 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 export const api = createApi({
-  baseQuery: fetchBaseQuery({ baseUrl: 'https://gotech-ecommerce.onrender.com/api' }),
+  baseQuery: fetchBaseQuery({ baseUrl: 'https://go-tech-school.onrender.com/api' }),
   reducerPath: 'api',
-  tagTypes: ['User'],
+  tagTypes: ['User', 'Home'],
   endpoints: (builder) => ({
 
     registerUser: builder.mutation({
@@ -27,10 +27,16 @@ export const api = createApi({
       invalidatesTags: ['User'],
     }),
 
+    getHome: builder.query({
+      query: () => '/',
+      providesTags: ['Home'],
+    }),
+
   }),
 });
 
 export const { 
     useRegisterUserMutation, 
-    useLoginUserMutation
+    useLoginUserMutation,
+    useGetHomeQuery,
  } = api;

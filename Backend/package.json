@@ -17,12 +17,12 @@
     "path": "^0.12.7",
     "url": "^0.11.3"
   },
-  "name": "backend",
+  "name": "Backend",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon scripts.js",
+    "start": "nodemon index.js",
     "dev": "nodemon index.js",
     "build": "npm i"
   },
