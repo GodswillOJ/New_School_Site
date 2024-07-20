@@ -8,7 +8,7 @@ import HomeLayout from './Scenes/Layouts/HomeLayouts/index'
 import Home from './Scenes/Home/index';
 import Login from './Scenes/Auth/Login'; // Corrected import
 import Register from './Scenes/Auth/Register'; // Corrected import
-import 'App.css'
+import '../src/App.css'
 
 function App() {
   const mode = useSelector((state) => state.global.mode);
