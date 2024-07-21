@@ -346,9 +346,41 @@ const Home = () => {
                         {index === 5 && 'Our Excursions.'}
                         {index === 6 && 'Our Courses.'}
                       </Box>
-                      <Link href='/our_faces' style={{ fontWeight: 'bold', color: '#21daee' }}>
-                        See more..
-                      </Link>
+                      {index === 0 && (
+                        <Link href='/our_faces' style={{ fontWeight: 'bold', color: '#21daee' }}>
+                          See more..
+                        </Link>
+                      )}
+                      {index === 1 && (
+                        <Link href='/tutors' style={{ fontWeight: 'bold', color: '#21daee' }}>
+                          See more..
+                        </Link>
+                      )}
+                      {index === 2 && (
+                        <Link href='/events' style={{ fontWeight: 'bold', color: '#21daee' }}>
+                          See more..
+                        </Link>
+                      )}
+                      {index === 3 && (
+                        <Link href='/chemistry_class' style={{ fontWeight: 'bold', color: '#21daee' }}>
+                          See more..
+                        </Link>
+                      )}
+                      {index === 4 && (
+                        <Link href='/school_facilities' style={{ fontWeight: 'bold', color: '#21daee' }}>
+                          See more..
+                        </Link>
+                      )}
+                      {index === 5 && (
+                        <Link href='/excursions' style={{ fontWeight: 'bold', color: '#21daee' }}>
+                          See more..
+                        </Link>
+                      )}
+                      {index === 6 && (
+                        <Link href='/courses' style={{ fontWeight: 'bold', color: '#21daee' }}>
+                          See more..
+                        </Link>
+                      )}
                     </Typography>
                   </Box>
                 </Box>
