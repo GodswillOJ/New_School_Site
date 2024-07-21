@@ -166,7 +166,7 @@ const Home = () => {
                     </Typography>
 
                   
-                      <Link href='/register'>
+                      <Link to='/register'>
                           <button className="glitter-button">Register</button>
                       </Link>
                   
@@ -347,37 +347,37 @@ const Home = () => {
                         {index === 6 && 'Our Courses.'}
                       </Box>
                       {index === 0 && (
-                        <Link href='/our_faces' style={{ fontWeight: 'bold', color: '#21daee' }}>
+                        <Link to='/our_faces' style={{ fontWeight: 'bold', color: '#21daee' }}>
                           See more..
                         </Link>
                       )}
                       {index === 1 && (
-                        <Link href='/tutors' style={{ fontWeight: 'bold', color: '#21daee' }}>
+                        <Link to='/tutors' style={{ fontWeight: 'bold', color: '#21daee' }}>
                           See more..
                         </Link>
                       )}
                       {index === 2 && (
-                        <Link href='/events' style={{ fontWeight: 'bold', color: '#21daee' }}>
+                        <Link to='/events' style={{ fontWeight: 'bold', color: '#21daee' }}>
                           See more..
                         </Link>
                       )}
                       {index === 3 && (
-                        <Link href='/chemistry_class' style={{ fontWeight: 'bold', color: '#21daee' }}>
+                        <Link to='/chemistry_class' style={{ fontWeight: 'bold', color: '#21daee' }}>
                           See more..
                         </Link>
                       )}
                       {index === 4 && (
-                        <Link href='/school_facilities' style={{ fontWeight: 'bold', color: '#21daee' }}>
+                        <Link to='/school_facilities' style={{ fontWeight: 'bold', color: '#21daee' }}>
                           See more..
                         </Link>
                       )}
                       {index === 5 && (
-                        <Link href='/excursions' style={{ fontWeight: 'bold', color: '#21daee' }}>
+                        <Link to='/excursions' style={{ fontWeight: 'bold', color: '#21daee' }}>
                           See more..
                         </Link>
                       )}
                       {index === 6 && (
-                        <Link href='/courses' style={{ fontWeight: 'bold', color: '#21daee' }}>
+                        <Link to='/courses' style={{ fontWeight: 'bold', color: '#21daee' }}>
                           See more..
                         </Link>
                       )}
