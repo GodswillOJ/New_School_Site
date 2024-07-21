@@ -56,16 +56,18 @@ const Navbar = () => {
           
           {/* Logo and Menu Section */}
           <FlexBetweenBox sx={{ width: '100%', padding: 1, boxShadow: '0 4px 12px rgba(255, 255, 255, 0.1)', }}>
-            <Typography variant="h6" sx={{ 
-                margin: 1, 
-                color:'#c370c8 !important',
-                fontFamily: "Pacifico, cursive",
-                fontWeight: '400',
-                fontStyle: 'normal',
-                textAlign: 'center'  
-              }}>
-              Gotech_Edu
-            </Typography>
+            <Link href='/'>
+              <Typography variant="h6" sx={{ 
+                  margin: 1, 
+                  color:'#c370c8 !important',
+                  fontFamily: "Pacifico, cursive",
+                  fontWeight: '400',
+                  fontStyle: 'normal',
+                  textAlign: 'center'  
+                }}>
+                Gotech_Edu
+              </Typography>
+            </Link>
             {isMobile ? (
               <>
                 <IconButton 

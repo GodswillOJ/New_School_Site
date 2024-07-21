@@ -6,6 +6,7 @@ import { useSelector } from 'react-redux';
 import { themeSettings } from './theme';
 import HomeLayout from './Scenes/Layouts/HomeLayouts/index'
 import Home from './Scenes/Home/index';
+import Faces from './Scenes/Home/faces';
 import Login from './Scenes/Auth/Login'; // Corrected import
 import Register from './Scenes/Auth/Register'; // Corrected import
 import '../src/App.css'
@@ -24,6 +25,7 @@ function App() {
             {/* Home_Layouts */}
             <Route element={<HomeLayout/>}>
               <Route path='/' element={<Home />} />
+              <Route path='/our_faces' element={<Faces />} />
               <Route path="/login" element={<Login />} /> 
               <Route path="/register" element={<Register />} />
             </Route>

@@ -130,3 +130,55 @@ form button:hover:enabled {
   gap: 0.5rem;
   width: 100%;
 }
+
+
+/* home_register_glitter */
+
+.glitter-button {
+  background: none;
+  border: 2px solid white;
+  color: darkblue; /* Adjust the dark color as needed */
+  padding: 10px 20px;
+  border-radius: 5px;
+  width: 100%;
+  font-size: 16px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  animation: glitter 1.5s infinite;
+  text-decoration: none; /* Ensures the text has no underline */
+}
+
+@keyframes glitter {
+  0% {
+      color: darkblue;
+  }
+  50% {
+      color: #fff;
+  }
+  100% {
+      color: darkblue;
+  }
+}
+
+.glitter-button:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.8), transparent 20%);
+  transform: translate(-50%, -50%) rotate(0deg);
+  animation: rotate 1.5s linear infinite;
+  opacity: 1;
+}
+
+@keyframes rotate {
+  0% {
+      transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+      transform: translate(-50%, -50%) rotate(360deg);
+  }
+}

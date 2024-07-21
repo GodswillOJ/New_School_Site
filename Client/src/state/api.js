@@ -1,9 +1,10 @@
+import { getFormLabelUtilityClasses } from '@mui/material';
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 export const api = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: 'https://go-tech-school.onrender.com/api' }),
   reducerPath: 'api',
-  tagTypes: ['User', 'Home'],
+  tagTypes: ['User', 'Home', 'Faces'],
   endpoints: (builder) => ({
 
     registerUser: builder.mutation({
@@ -32,6 +33,11 @@ export const api = createApi({
       providesTags: ['Home'],
     }),
 
+    getFaces: builder.query({
+      query: () => '/our_faces',
+      providesTags: ['Faces'],
+    }),
+
   }),
 });
 
@@ -39,4 +45,5 @@ export const {
     useRegisterUserMutation, 
     useLoginUserMutation,
     useGetHomeQuery,
+    useGetFacesQuery,
  } = api;

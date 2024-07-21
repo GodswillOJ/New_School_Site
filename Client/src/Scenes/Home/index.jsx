@@ -64,117 +64,122 @@ const Home = () => {
   return (
     <div className='Home'>
       <Box sx={{ position: 'relative', width: '100%', boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.1)' }}>
-      <Box
-          component="img"
-          alt="backgroundImg"
-          src={teacher1}
-          width="100%"
-          height="500px"
-          sx={{
-            objectFit: 'cover',
-            boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)', // Adds a subtle shadow
-            ...shakeAnimation,
-          }}
-        />
-        <Box 
-          sx={{ 
-            position: 'absolute', 
-            top: 0, 
-            left: 0, 
-            width: '100%', 
-            height: '100%', 
-            backgroundColor: 'rgba(0, 0, 0, 0.5)', 
-            display: 'flex', 
-            justifyContent: 'start', 
-            alignItems: 'center',
-            color: 'white',
-            textAlign: 'center',
-            paddingLeft: isSmallScreen ? '50px' : '20px', // Adjust padding based on screen size
-            flexDirection: 'row'
-          }}
-        >
-        <SchoolIcon 
-          sx={{ 
-            fontSize: isSmallScreen ? 100 : 250, // Adjust font size based on screen size
-            color: '#000a0d', 
-            background: 'linear-gradient(to right, #566e86, #0b0127)', 
-            borderRadius: '50%', 
-            padding: 1,
-            marginBottom: 2,
-            transform: 'rotate(-20deg)',
-            boxShadow: '0 4px 12px rgba(255, 255, 255, 0.1)', // Adds a fine shadow for dark background
-          }} 
-        />
+        <Box
+            component="img"
+            alt="backgroundImg"
+            src={teacher1}
+            width="100%"
+            height="500px"
+            sx={{
+              objectFit: 'cover',
+              boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)', // Adds a subtle shadow
+              ...shakeAnimation,
+            }}
+          />
           <Box 
-              sx={{ 
-                  display: 'flex', 
-                  flexDirection: 'column', 
-                  alignItems: 'center',
-                  textAlign: 'center',
-              }}
+            sx={{ 
+              position: 'absolute', 
+              top: 0, 
+              left: 0, 
+              width: '100%', 
+              height: '100%', 
+              backgroundColor: 'rgba(0, 0, 0, 0.5)', 
+              display: 'flex', 
+              justifyContent: 'start', 
+              alignItems: 'center',
+              color: 'white',
+              textAlign: 'center',
+              paddingLeft: isSmallScreen ? '50px' : '20px', // Adjust padding based on screen size
+              flexDirection: 'row'
+            }}
           >
-              <Typography 
-                  variant="h4" 
-                  sx={{ 
-                      fontSize: isSmallScreen ? '20px' : '50px',
-                      fontFamily: "Pacifico, cursive",
-                      fontWeight: '400',
-                      fontStyle: 'normal',
-                  }}
-              >
-                  <b>GOTECH_Edu</b>
-              </Typography>
-              <div style={{ position: 'relative', alignItems:'normal', padding:'10px' }}>
-                  <Typography 
-                      variant="body1" 
-                      sx={{ 
-                          fontSize: isSmallScreen ? '15px' : '20px',
-                          fontFamily: "Quicksand",
-                          fontWeight: 'normal', // Adjust the weight as needed (e.g., 'bold', 'lighter', '400', '700')
-                          fontStyle: 'normal',
-                          textAlign:'left' 
-                      }}
-                  >
-                      Why shoot for the moon
-                  </Typography>
+          <SchoolIcon 
+            sx={{ 
+              fontSize: isSmallScreen ? 100 : 250, // Adjust font size based on screen size
+              color: '#000a0d', 
+              background: 'linear-gradient(to right, #566e86, #0b0127)', 
+              borderRadius: '50%', 
+              padding: 1,
+              marginBottom: 2,
+              transform: 'rotate(-20deg)',
+              boxShadow: '0 4px 12px rgba(255, 255, 255, 0.1)', // Adds a fine shadow for dark background
+            }} 
+          />
+            <Box 
+                sx={{ 
+                    display: 'flex', 
+                    flexDirection: 'column', 
+                    alignItems: 'center',
+                    textAlign: 'center',
+                }}
+            >
+                <Typography 
+                    variant="h4" 
+                    sx={{ 
+                        fontSize: isSmallScreen ? '20px' : '50px',
+                        fontFamily: "Pacifico, cursive",
+                        fontWeight: '400',
+                        fontStyle: 'normal',
+                    }}
+                >
+                    <b>GOTECH_Edu</b>
+                </Typography>
+                <div style={{ position: 'relative', alignItems:'normal', padding:'10px' }}>
+                    <Typography 
+                        variant="body1" 
+                        sx={{ 
+                            fontSize: isSmallScreen ? '15px' : '20px',
+                            fontFamily: "Quicksand",
+                            fontWeight: 'normal', // Adjust the weight as needed (e.g., 'bold', 'lighter', '400', '700')
+                            fontStyle: 'normal',
+                            textAlign:'left' 
+                        }}
+                    >
+                        Why shoot for the moon
+                    </Typography>
 
-                  <Typography 
-                      variant="body1" 
-                      sx={{ 
-                          fontSize: isSmallScreen ? '10px' : '16px',
-                          fontFamily: "Quicksand",
-                          fontWeight: 'normal', // Adjust the weight as needed (e.g., 'bold', 'lighter', '400', '700')
-                          fontStyle: 'normal',
-                          textAlign:'left' 
-                      }}
-                  >
-                      when you can aim for the stars..
-                  </Typography>
+                    <Typography 
+                        variant="body1" 
+                        sx={{ 
+                            fontSize: isSmallScreen ? '10px' : '16px',
+                            fontFamily: "Quicksand",
+                            fontWeight: 'normal', // Adjust the weight as needed (e.g., 'bold', 'lighter', '400', '700')
+                            fontStyle: 'normal',
+                            textAlign:'left' 
+                        }}
+                    >
+                        when you can aim for the stars..
+                    </Typography>
 
-                  <Typography 
-                      variant="body1" 
-                      sx={{ 
-                          fontSize: isSmallScreen ? '15px' : '20px',
-                          fontFamily: "Edu AU VIC WA NT Hand, cursive",
-                          fontWeight: 'normal', // Adjust the weight as needed (e.g., 'bold', 'lighter', '400', '700')
-                          fontStyle: 'normal',
-                          textAlign: 'left',
-                          fontOpticalSizing: 'auto',
-                      }}
-                  >
-                      Education is key..
-                  </Typography>
+                    <Typography 
+                        variant="body1" 
+                        sx={{ 
+                            fontSize: isSmallScreen ? '15px' : '20px',
+                            fontFamily: "Edu AU VIC WA NT Hand, cursive",
+                            fontWeight: 'normal', // Adjust the weight as needed (e.g., 'bold', 'lighter', '400', '700')
+                            fontStyle: 'normal',
+                            textAlign: 'left',
+                            fontOpticalSizing: 'auto',
+                        }}
+                    >
+                        Education is key..
+                    </Typography>
 
-              </div>
+                  
+                      <Link href='/register'>
+                          <button className="glitter-button">Register</button>
+                      </Link>
+                  
+                </div>
+            </Box>
+            <style>
+              @import url('https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&family=Pacifico&family=Quicksand:wght@300..700&display=swap');
+              @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+              @import url('https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&family=Pacifico&display=swap');
+              @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
+            </style>
+
           </Box>
-          <style>
-            @import url('https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&family=Pacifico&family=Quicksand:wght@300..700&display=swap');
-            @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
-            @import url('https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&family=Pacifico&display=swap');
-            @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
-          </style>
-
-        </Box>
       </Box>
 
       <Box sx={{ position: 'relative', width: '100%', display: 'flex', justifyContent: 'center' }}>
@@ -322,15 +327,17 @@ const Home = () => {
                   >
                     <Typography
                       variant="body1"
+                      display= 'flex'
+                      flexDirection={'column'}
                       sx={{
                         hover: '#b14606',
-                        fontSize: isSmallScreen ? '10px' : '20px',
+                        fontSize: isSmallScreen ? '8px' : '20px',
                         padding: '0',
                         fontFamily: 'PT Serif, serif',
                         fontStyle: 'italic',
                       }}
                     >
-                      <p style={{ fontWeight: 'bold' }}>
+                      <Box component="span" style={{ fontWeight: 'bold' }}>
                         {index === 0 && 'Check Out Our Faces of GoTECH_EDU.'}
                         {index === 1 && 'Meet Our Tutors.'}
                         {index === 2 && 'Events: Our upcoming road tour.'}
@@ -338,8 +345,8 @@ const Home = () => {
                         {index === 4 && 'Our School and Facilities.'}
                         {index === 5 && 'Our Excursions.'}
                         {index === 6 && 'Our Courses.'}
-                      </p>
-                      <Link style={{ fontWeight: 'bold', color: '#21daee' }}>
+                      </Box>
+                      <Link href='/our_faces' style={{ fontWeight: 'bold', color: '#21daee' }}>
                         See more..
                       </Link>
                     </Typography>
@@ -348,7 +355,7 @@ const Home = () => {
               </SwiperSlide>
             ))}
           </Swiper>
-      </div>
+        </div>
 
       <Box 
           sx={{ 
@@ -379,126 +386,126 @@ const Home = () => {
       </Box>
 
 
-      <Box style={{ position: 'relative', width: '100%' }}>
-        <Box
-            component="img"
-            alt="backgroundImg"
-            src={school}
-            width="100%"
-            height="15rem"
-            bottom='0'
-            sx={{ objectFit: "cover" }}
-        />
-        {/* Footer Box container */}
-        <Box 
-            sx={{ 
-                position: 'absolute', 
-                top: 0, 
-                left: 0,
-                display: 'flex',
-                flexDirection: isSmallScreen ? 'column' : 'row',
-                padding: '0 40px 0 40px',
-                alignItems: 'center',
-                justifyContent: isSmallScreen ? 'center' : 'space-between',
-                backgroundColor: 'rgba(0, 0, 0, 0.5)', 
-                color: 'dark',
-                width: '100%',
-                height: '240px',
-            }}
-        >
-            <>
-              <Box sx={{ 
-                padding: isSmallScreen ? '0 0 0 10px' : '0 0 0 0',
-               }}>
-                <Typography
-                sx={{
-                  color:'#fff !important',
-                  fontFamily: "Pacifico, cursive",
-                  fontSize: isSmallScreen ? '18px' : '25px',
-                  fontWeight: '400',
-                  justifyContent: "right gap={2}",
-                  fontStyle: 'normal', 
-                }}
-                >
-                  GoTECH_EDU
-                </Typography>
-                <Typography
-                sx={{
-                  color:'#fff !important',
-                  fontFamily: "Quicksand",
-                  fontWeight: '400',
-                  justifyContent: "right gap={2}",
-                  fontStyle: 'normal', 
-                }}
-                >
-                  Your excellence education is guaranteed.
-                </Typography>
-                <Typography
-                sx={{
-                  color:'#fff !important',
-                  fontFamily: "Edu AU VIC WA NT Hand, cursive",
-                  fontWeight: '400',
-                  justifyContent: "right gap={2}",
-                  fontStyle: 'normal', 
-                }}
-                >
-                  Abule Egba, Lagos Nigeria. 
-                </Typography>
-              </Box>
-            </>
-
-            <div 
-              style={{
-                justifyContent: isSmallScreen ? "left": "right",
-                paddingRight: isSmallScreen ? '60px' : '0',
+        <Box style={{ position: 'relative', width: '100%' }}>
+          <Box
+              component="img"
+              alt="backgroundImg"
+              src={school}
+              width="100%"
+              height="15rem"
+              bottom='0'
+              sx={{ objectFit: "cover" }}
+          />
+          {/* Footer Box container */}
+          <Box 
+              sx={{ 
+                  position: 'absolute', 
+                  top: 0, 
+                  left: 0,
+                  display: 'flex',
+                  flexDirection: isSmallScreen ? 'column' : 'row',
+                  padding: '0 40px 0 40px',
+                  alignItems: 'center',
+                  justifyContent: isSmallScreen ? 'center' : 'space-between',
+                  backgroundColor: 'rgba(0, 0, 0, 0.5)', 
+                  color: 'dark',
+                  width: '100%',
+                  height: '240px',
               }}
-            >
-
-            <Box mt={2} sx={{
-              display: 'flex',
-              backgroundColor: 'rgba(0, 0, 0, 0.5)', 
-              borderRadius: '5px',
-              boxShadow: '0 4px 12px rgba(255, 255, 255, 0.3)',
-              justifyContent: 'space-between',
-              }}>
-              <Typography variant="body2" padding='10px' color="white">
-                  &copy; mail us.
-              </Typography>
-
-              <input type='button' value='email us' style={{
-                background: '#4c4c79',
-                color: 'white',
-                width: '60px',
-                border: 'none',
-                padding: '5px',
-                boxShadow: '0 4px 12px rgba(255, 255, 255, 0.1)',
-                borderRadius: '10px',
-              }}/>
-            </Box>
-
-              <Box display="flex" 
-              gap={2}>
-                  <IconButton href="https://facebook.com" target="_blank" sx={{ color: "primary.main" }}>
-                      <Facebook />
-                  </IconButton>
-                  <IconButton href="https://twitter.com" target="_blank" sx={{ color: "primary.main" }}>
-                      <Twitter />
-                  </IconButton>
-                  <IconButton href="https://instagram.com" target="_blank" sx={{ color: "primary.main" }}>
-                      <Instagram />
-                  </IconButton>
-                  <IconButton href="https://linkedin.com" target="_blank" sx={{ color: "primary.main" }}>
-                      <LinkedIn />
-                  </IconButton>
-              </Box>
-              <Box mt={2} sx={{textAlign: 'right'}}>
-                  <Typography variant="body2" color="white">
-                      &copy; 2024, Developer Godswill Ogono
+          >
+              <>
+                <Box sx={{ 
+                  padding: isSmallScreen ? '0 0 0 10px' : '0 0 0 0',
+                }}>
+                  <Typography
+                  sx={{
+                    color:'#fff !important',
+                    fontFamily: "Pacifico, cursive",
+                    fontSize: isSmallScreen ? '18px' : '25px',
+                    fontWeight: '400',
+                    justifyContent: "right gap={2}",
+                    fontStyle: 'normal', 
+                  }}
+                  >
+                    GoTECH_EDU
                   </Typography>
+                  <Typography
+                  sx={{
+                    color:'#fff !important',
+                    fontFamily: "Quicksand",
+                    fontWeight: '400',
+                    justifyContent: "right gap={2}",
+                    fontStyle: 'normal', 
+                  }}
+                  >
+                    Your excellence education is guaranteed.
+                  </Typography>
+                  <Typography
+                  sx={{
+                    color:'#fff !important',
+                    fontFamily: "Edu AU VIC WA NT Hand, cursive",
+                    fontWeight: '400',
+                    justifyContent: "right gap={2}",
+                    fontStyle: 'normal', 
+                  }}
+                  >
+                    Abule Egba, Lagos Nigeria. 
+                  </Typography>
+                </Box>
+              </>
+
+              <div 
+                style={{
+                  justifyContent: isSmallScreen ? "left": "right",
+                  paddingRight: isSmallScreen ? '60px' : '0',
+                }}
+              >
+
+              <Box mt={2} sx={{
+                display: 'flex',
+                backgroundColor: 'rgba(0, 0, 0, 0.5)', 
+                borderRadius: '5px',
+                boxShadow: '0 4px 12px rgba(255, 255, 255, 0.3)',
+                justifyContent: 'space-between',
+                }}>
+                <Typography variant="body2" padding='10px' color="white">
+                    &copy; mail us.
+                </Typography>
+
+                <input type='button' value='email us' style={{
+                  background: '#4c4c79',
+                  color: 'white',
+                  width: '60px',
+                  border: 'none',
+                  padding: '5px',
+                  boxShadow: '0 4px 12px rgba(255, 255, 255, 0.1)',
+                  borderRadius: '10px',
+                }}/>
               </Box>
-            </div>
-        </Box>
-    </Box>
+
+                <Box display="flex" 
+                gap={2}>
+                    <IconButton href="https://facebook.com" target="_blank" sx={{ color: "primary.main" }}>
+                        <Facebook />
+                    </IconButton>
+                    <IconButton href="https://twitter.com" target="_blank" sx={{ color: "primary.main" }}>
+                        <Twitter />
+                    </IconButton>
+                    <IconButton href="https://instagram.com" target="_blank" sx={{ color: "primary.main" }}>
+                        <Instagram />
+                    </IconButton>
+                    <IconButton href="https://linkedin.com" target="_blank" sx={{ color: "primary.main" }}>
+                        <LinkedIn />
+                    </IconButton>
+                </Box>
+                <Box mt={2} sx={{textAlign: 'right'}}>
+                    <Typography variant="body2" color="white">
+                        &copy; 2024, Developer Godswill Ogono
+                    </Typography>
+                </Box>
+              </div>
+          </Box>
+      </Box>
       
 
       </div>
