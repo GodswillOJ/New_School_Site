@@ -9,6 +9,7 @@ import t3 from 'Assets/t3.jpg';
 import t4 from 'Assets/t4.jpg';
 import t5 from 'Assets/t5.jpg';
 import t6 from 'Assets/t6.jpg';
+import t7 from 'Assets/t7.jpg';
 
 const tutors = [
     {
@@ -54,7 +55,7 @@ const tutors = [
     {
       name: 'Mariam Chisom',
       profession: 'Geography Teacher',
-      image: t6,
+      image: t7,
       altImage: 'Alt Image Text',
       subject: 'Geography',
       fullName: 'David Wilson',
