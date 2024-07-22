@@ -35,7 +35,7 @@ const Login = () => {
         setEmail={setEmail}
         password={password}
         setPassword={setPassword}
-        label="Login"
+        label="Login form"
         loading={isLoading}
         error={error}
       />
@@ -72,9 +72,9 @@ const Form = ({ onSubmit, email, setEmail, password, setPassword, label, loading
   return (
     <div className="Login">
       <div className="CounterCont LogCont">
-        <h2 className="Title">Personal Website</h2>
+        <h2 className="Title">{label}</h2>
         <form className="Counter_Engine" id="registerInput" onSubmit={onSubmit}>
-          <h2>{label}</h2>
+          <p>  <b>Please fill in your email and password.</b> </p>
           <div>
             <label>Email:</label>
             <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
@@ -85,7 +85,7 @@ const Form = ({ onSubmit, email, setEmail, password, setPassword, label, loading
           </div>
           <div id="verify_btn">
             <button type="submit" disabled={loading}>
-              {loading ? 'Logging in...' : label}
+              {loading ? 'Logging in...' : 'login'}
             </button>
             {label === 'Login' && (
               <div id="redirect_log">

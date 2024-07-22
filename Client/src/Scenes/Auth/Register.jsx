@@ -79,7 +79,7 @@ const Register = () => {
         setPhone={setPhone}
         file={file}
         setFile={setFile}
-        label="Register"
+        label="Registration form"
         loading={isLoading}
         error={error}
         countries={countries}
@@ -117,9 +117,9 @@ const Form = ({ onSubmit, username, setUsername, email, setEmail, password, setP
   return (
     <div className="Register">
       <div className="CounterCont RegCont">
-        <h2 className="Title">Personal Website</h2>
+        <h2 className="Title">{label}</h2>
         <form className="Counter_Engine" id="registerInput" onSubmit={onSubmit}>
-          <h2>{label}</h2>
+          <p>  <b>Please complete fill the form below.</b> </p>
           <div className="user_img">
             <label>Profile Image:</label>
             <input type="file" onChange={(e) => setFile(e.target.files[0])} />
@@ -163,7 +163,7 @@ const Form = ({ onSubmit, username, setUsername, email, setEmail, password, setP
           </div>
           <div id="verify_btn">
             <button type="submit" disabled={loading}>
-              {loading ? 'Creating User...' : label}
+              {loading ? 'Creating User...' : 'Register'}
             </button>
             {label === 'Register' && (
               <div id="redirect_log">

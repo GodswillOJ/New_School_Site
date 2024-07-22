@@ -4,7 +4,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 export const api = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: 'https://go-tech-school.onrender.com/api' }),
   reducerPath: 'api',
-  tagTypes: ['User', 'Home', 'Faces'],
+  tagTypes: ['User', 'Home', 'Faces', 'Facilities', 'Tutors', 'Excursion', 'Events', 'Courses', 'Chemistry'],
   endpoints: (builder) => ({
 
     registerUser: builder.mutation({
@@ -38,6 +38,36 @@ export const api = createApi({
       providesTags: ['Faces'],
     }),
 
+    getTutors: builder.query({
+      query: () => '/tutors',
+      providesTags: ['Tutors'],
+    }),
+
+    getChemistry: builder.query({
+      query: () => '/chemistry_class',
+      providesTags: ['Chemistry'],
+    }),
+
+    getEvents: builder.query({
+      query: () => '/events',
+      providesTags: ['Events'],
+    }),
+
+    getFacilities: builder.query({
+      query: () => '/facilities',
+      providesTags: ['Facilities'],
+    }),
+
+    getCourses: builder.query({
+      query: () => '/courses',
+      providesTags: ['Courses'],
+    }),
+
+    getExcursion: builder.query({
+      query: () => '/excursion',
+      providesTags: ['Excursion'],
+    }),
+
   }),
 });
 
@@ -46,4 +76,10 @@ export const {
     useLoginUserMutation,
     useGetHomeQuery,
     useGetFacesQuery,
+    useGetTutorsQuery,
+    useGetFacilitiesQuery,
+    useGetExcursionQuery,
+    useGetCoursesQuery,
+    useGetEventsQuery,
+    useGetChemistryQuery,
  } = api;

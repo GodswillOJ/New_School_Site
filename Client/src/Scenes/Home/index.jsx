@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Box, Typography, useMediaQuery, IconButton, Link } from '@mui/material';
 import SchoolIcon from '@mui/icons-material/School';
 import { Facebook, Twitter, Instagram, LinkedIn } from '@mui/icons-material';
+import { NavLink } from 'react-router-dom';
 import YouTube from 'react-youtube';
 import teacher1 from 'Assets/Teacher_1.jpg';
 import student1 from 'Assets/18644.jpg';
@@ -166,9 +167,9 @@ const Home = () => {
                     </Typography>
 
                   
-                      <Link to='/register'>
+                      <NavLink to='/register'>
                           <button className="glitter-button">Register</button>
-                      </Link>
+                      </NavLink>
                   
                 </div>
             </Box>
@@ -347,34 +348,34 @@ const Home = () => {
                         {index === 6 && 'Our Courses.'}
                       </Box>
                       {index === 0 && (
-                        <Link to='/our_faces' style={{ fontWeight: 'bold', color: '#21daee' }}>
+                        <NavLink to='/our_faces' style={{ fontWeight: 'bold', color: '#21daee' }}>
                           See more..
-                        </Link>
+                        </NavLink>
                       )}
                       {index === 1 && (
-                        <Link to='/tutors' style={{ fontWeight: 'bold', color: '#21daee' }}>
+                        <NavLink to='/tutors' style={{ fontWeight: 'bold', color: '#21daee' }}>
                           See more..
-                        </Link>
+                        </NavLink>
                       )}
                       {index === 2 && (
-                        <Link to='/events' style={{ fontWeight: 'bold', color: '#21daee' }}>
+                        <NavLink to='/events' style={{ fontWeight: 'bold', color: '#21daee' }}>
                           See more..
-                        </Link>
+                        </NavLink>
                       )}
                       {index === 3 && (
-                        <Link to='/chemistry_class' style={{ fontWeight: 'bold', color: '#21daee' }}>
+                        <NavLink to='/chemistry_class' style={{ fontWeight: 'bold', color: '#21daee' }}>
                           See more..
-                        </Link>
+                        </NavLink>
                       )}
                       {index === 4 && (
-                        <Link to='/school_facilities' style={{ fontWeight: 'bold', color: '#21daee' }}>
+                        <NavLink to='/school_facilities' style={{ fontWeight: 'bold', color: '#21daee' }}>
                           See more..
-                        </Link>
+                        </NavLink>
                       )}
                       {index === 5 && (
-                        <Link to='/excursions' style={{ fontWeight: 'bold', color: '#21daee' }}>
+                        <NavLink to='/excursions' style={{ fontWeight: 'bold', color: '#21daee' }}>
                           See more..
-                        </Link>
+                        </NavLink>
                       )}
                       {index === 6 && (
                         <Link to='/courses' style={{ fontWeight: 'bold', color: '#21daee' }}>
