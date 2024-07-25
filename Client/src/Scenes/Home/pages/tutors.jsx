@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Box, Grid, Typography, Button, IconButton, useMediaQuery } from '@mui/material';
+import { Box, Grid, Typography, Button, Modal, IconButton, useMediaQuery } from '@mui/material';
+import CloseIcon from '@mui/icons-material/Close';
 import { Facebook, Twitter, Instagram, LinkedIn } from '@mui/icons-material';
 import { NavLink } from 'react-router-dom';
 import school from 'Assets/school_gal.jpg';
@@ -90,38 +91,73 @@ const tutors = [
   ];
 
 const Tutors = () => {
-  const [selectedTutor, setSelectedTutor] = useState(null);
-  const isSmallScreen = useMediaQuery('(max-width:800px)');
-
-  const handleSeeProfile = (tutor) => {
-    setSelectedTutor(tutor);
-  };
-
+    const [selectedTutor, setSelectedTutor] = useState(null);
+    const [open, setOpen] = useState(false);
+    const isSmallScreen = useMediaQuery('(max-width:800px)');
+  
+    const handleSeeProfile = (tutor) => {
+      setSelectedTutor(tutor);
+      setOpen(true);
+    };
+  
+    const handleClose = () => {
+      setOpen(false);
+      setSelectedTutor(null);
+    };
+  
   return (
     <>
-      {selectedTutor && (
-        <Box sx={{ display: 'block', mb: 4, ml: 2, mr: 2, boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)', }}>
-          <Grid container spacing={2}>
+    <Modal open={open} onClose={handleClose}>
+    <Box
+        sx={{
+        position: 'relative',
+        display: 'block',
+        mb: 4,
+        ml: 2,
+        mr: 2,
+        boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
+        backgroundColor: 'white',
+        p: 2,
+        maxWidth: '80%',
+        mx: 'auto',
+        mt: 4
+        }}
+    >
+        <IconButton
+        aria-label="close"
+        onClick={handleClose}
+        sx={{
+            position: 'absolute',
+            top: 8,
+            right: 8,
+            color: (theme) => theme.palette.grey[500],
+        }}
+        >
+        <CloseIcon />
+        </IconButton>
+        {selectedTutor && (
+        <Grid container spacing={2}>
             <Grid item xs={12} md={6}>
-              <img
+            <img
                 src={selectedTutor.image}
                 alt={selectedTutor.altImage}
                 style={{ width: '100%' }}
-              />
+            />
             </Grid>
             <Grid item xs={12} md={6}>
-              <Box>
+            <Box>
                 <Typography variant="h1">{selectedTutor.subject}</Typography>
                 <Typography variant="h4">{selectedTutor.fullName}</Typography>
                 <Typography>{selectedTutor.class}</Typography>
-              </Box>
-              <Box>
+            </Box>
+            <Box>
                 <Typography>{selectedTutor.lorem}</Typography>
-              </Box>
+            </Box>
             </Grid>
-          </Grid>
-        </Box>
-      )}
+        </Grid>
+        )}
+    </Box>
+    </Modal>
 
       <Box sx={{ display: isSmallScreen ? 'block' : 'flex', m: '1rem' }}>
         <Box sx={{ display: 'flex', width: isSmallScreen ? '100%' : '300%', justifyContent: 'space-between', flexWrap: 'wrap', }}>
@@ -229,7 +265,7 @@ const Tutors = () => {
                     height='100%'
                     sx={{ objectFit: 'cover', boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)', }}
                   />
-                <NavLink to="/tutors" style={{ textDecoration: 'none', color: '#fff' }}>
+                <NavLink to="/events" style={{ textDecoration: 'none', color: '#fff' }}>
                 <Box
                   sx={{
                     position: 'absolute',

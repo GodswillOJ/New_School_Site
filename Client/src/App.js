@@ -8,6 +8,7 @@ import HomeLayout from './Scenes/Layouts/HomeLayouts/index'
 import Home from './Scenes/Home/index';
 import Faces from './Scenes/Home/pages/faces';
 import Tutors from './Scenes/Home/pages/tutors';
+import Events from './Scenes/Home/pages/events';
 import Login from './Scenes/Auth/Login'; // Corrected import
 import Register from './Scenes/Auth/Register'; // Corrected import
 import '../src/App.css'
@@ -27,6 +28,7 @@ function App() {
             <Route element={<HomeLayout/>}>
               <Route path='/' element={<Home />} />
               <Route path='/tutors' element={<Tutors />} />
+              <Route path='/events' element={<Events />} />
               <Route path='/our_faces' element={<Faces />} />
               <Route path="/login" element={<Login />} /> 
               <Route path="/register" element={<Register />} />

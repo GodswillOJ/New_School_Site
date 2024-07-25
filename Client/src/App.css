@@ -182,3 +182,12 @@ form button:hover:enabled {
       transform: translate(-50%, -50%) rotate(360deg);
   }
 }
+
+/* Events */
+.Events{
+  overflow-x: hidden;
+}
+
+@media screen and (max-width: 800px) {
+
+}
