@@ -8,6 +8,7 @@ import HomeLayout from './Scenes/Layouts/HomeLayouts/index'
 import Home from './Scenes/Home/index';
 import Faces from './Scenes/Home/pages/faces';
 import Chemistry from './Scenes/Home/pages/chemistry';
+import Facilities from './Scenes/Home/pages/our_school';
 import Tutors from './Scenes/Home/pages/tutors';
 import Events from './Scenes/Home/pages/events';
 import Login from './Scenes/Auth/Login'; // Corrected import
@@ -32,6 +33,7 @@ function App() {
               <Route path='/events' element={<Events />} />
               <Route path='/our_faces' element={<Faces />} />
               <Route path='/chemistry_class' element={<Chemistry />} />
+              <Route path='/school_facilities' element={<Facilities />} />
               <Route path="/login" element={<Login />} /> 
               <Route path="/register" element={<Register />} />
             </Route>
