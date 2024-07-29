@@ -6,7 +6,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Pagination, Navigation } from 'swiper/modules';
-import { Facebook, Twitter, Instagram, LinkedIn } from '@mui/icons-material';
+import Footer from 'Components/Footer';
 import pagent from 'Assets/pagent.jpg';
 import road from 'Assets/road.jpg';
 import courses from 'Assets/courses_.jpg';
@@ -54,7 +54,11 @@ const Events = () => {
           width: isSmallScreen ? '100%' : '80%'
         }}>
             {/* Slider Container */}
-            <div style={{ height: isSmallScreen ? '100%' : '600px', color: 'white' }}>
+            <div style={{ 
+              height: isSmallScreen ? '100%' : '600px', 
+              color: 'white',
+              boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
+            }}>
               <Swiper
                 spaceBetween={20}
                 slidesPerView={1}
@@ -94,64 +98,84 @@ const Events = () => {
                           textAlign: 'center',
                         }}
                       >
-                        <Typography
-                          variant="body1"
-                          display='flex'
-                          gap='0'
-                          flexDirection={'column'}
-                          sx={{
-                            hover: '#b14606',
-                            fontSize: isSmallScreen ? '40px' : '60px',
-                            padding: '0',
-                            fontFamily: 'PT Serif, serif',
-                            fontStyle: 'italic',
-                          }}
-                        >
-                          <Box component="span" style={{ fontWeight: 'bold' }}>
-                            {index === 0 && 'A Trip to Dubai'}
-                            {index === 1 && 'Obudu Cattle Ranch. Calabar'}
-                            {index === 2 && 'A Trip to NNPC.'}
-                            {index === 3 && 'Hospital Trip.'}
-                            {index === 4 && 'Farms.'}
-                            {index === 5 && 'Power Grid.'}
-                            {index === 6 && 'Museum Trip.'}
-                          </Box>
-                          {index === 0 && (
-                            <NavLink to='/our_faces' style={{ fontWeight: 'bold', color: '#000' }}>
-                              See more..
-                            </NavLink>
-                          )}
-                          {index === 1 && (
-                            <NavLink to='/tutors' style={{ fontWeight: 'bold', color: '#000' }}>
-                              See more..
-                            </NavLink>
-                          )}
-                          {index === 2 && (
-                            <NavLink to='/events' style={{ fontWeight: 'bold', color: '#000' }}>
-                              See more..
-                            </NavLink>
-                          )}
-                          {index === 3 && (
-                            <NavLink to='/chemistry_class' style={{ fontWeight: 'bold', color: '#000' }}>
-                              See more..
-                            </NavLink>
-                          )}
-                          {index === 4 && (
-                            <NavLink to='/school_facilities' style={{ fontWeight: 'bold', color: '#000' }}>
-                              See more..
-                            </NavLink>
-                          )}
-                          {index === 5 && (
-                            <NavLink to='/excursions' style={{ fontWeight: 'bold', color: '#000' }}>
-                              See more..
-                            </NavLink>
-                          )}
-                          {index === 6 && (
-                            <NavLink to='/excursions' style={{ fontWeight: 'bold', color: '#000' }}>
-                              See more..
-                            </NavLink>
-                          )}
-                        </Typography>
+                      <Typography
+                        variant="body1"
+                        display='flex'
+                        gap='0'
+                        padding='20px'
+                        flexDirection={'column'}
+                        sx={{
+                          fontSize: isSmallScreen ? '40px' : '60px',
+                          fontFamily: 'PT Serif, serif',
+                          fontStyle: 'italic',
+                          backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                          boxShadow: '0 4px 12px rgba(255, 255, 255, 0.3)',
+                          '&:hover': {
+                            color: '#fff',
+                          },
+                          '& span': {
+                            fontWeight: 'bold',
+                            '&:hover': {
+                              color: '#1382edab',
+                            },
+                          },
+                          '& a': {
+                            fontWeight: 'bold',
+                            color: '#000',
+                            textDecoration: 'none',
+                            '&:hover': {
+                              color: '#a098adfa',
+                              textDecoration: 'underline',
+                            },
+                          },
+                        }}
+                      >
+                        <Box component="span">
+                          {index === 0 && 'A Trip to Dubai'}
+                          {index === 1 && 'Obudu Cattle Ranch. Calabar'}
+                          {index === 2 && 'A Trip to NNPC.'}
+                          {index === 3 && 'Hospital Trip.'}
+                          {index === 4 && 'Farms.'}
+                          {index === 5 && 'Power Grid.'}
+                          {index === 6 && 'Museum Trip.'}
+                        </Box>
+                        {index === 0 && (
+                          <NavLink to='/our_faces'>
+                            See more..
+                          </NavLink>
+                        )}
+                        {index === 1 && (
+                          <NavLink to='/tutors'>
+                            See more..
+                          </NavLink>
+                        )}
+                        {index === 2 && (
+                          <NavLink to='/events'>
+                            See more..
+                          </NavLink>
+                        )}
+                        {index === 3 && (
+                          <NavLink to='/chemistry_class'>
+                            See more..
+                          </NavLink>
+                        )}
+                        {index === 4 && (
+                          <NavLink to='/school_facilities'>
+                            See more..
+                          </NavLink>
+                        )}
+                        {index === 5 && (
+                          <NavLink to='/excursions'>
+                            See more..
+                          </NavLink>
+                        )}
+                        {index === 6 && (
+                          <NavLink to='/excursions'>
+                            See more..
+                          </NavLink>
+                        )}
+                      </Typography>
+
                       </Box>
                     </Box>
                   </SwiperSlide>
@@ -161,7 +185,8 @@ const Events = () => {
 
             {/* trip testimonials */}
             <div style={{
-              marginTop:'20px'
+              marginTop:'20px',
+              boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
             }}>
               <Typography variant='h3' padding='20px' sx={{
                 textAlign: 'center',
@@ -172,9 +197,16 @@ const Events = () => {
               </Typography>
               <Box>
                 {['Testimonial 1', 'Testimonial 2', 'Testimonial 3', 'Testimonial 4'].map((testimonial, index) => (
-                  <Box key={index} sx={{ display: 'flex', gap: '20px', mb: 4 }}>
+                  <Box key={index} sx={{ 
+                    display: 'flex',
+                    gap: '20px',
+                    mb: 4,
+                    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
+                  }}>
                     {/* Image Container */}
-                    <Box sx={{ flex: '1' }}>
+                    <Box sx={{ 
+                      flex: '1',
+                       }}>
                       <Box
                         component="img"
                         alt="testimonial image"
@@ -224,6 +256,7 @@ const Events = () => {
                       height: '100px',
                       transform: 'translate(-50%, -50%)',
                       backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                      boxShadow: '0 4px 12px rgba(255, 255, 255, 0.3)',
                       padding: '10px',
                       borderRadius: '5px',
                       textAlign: 'center',
@@ -256,6 +289,7 @@ const Events = () => {
                       height: '100px',
                       transform: 'translate(-50%, -50%)',
                       backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                      boxShadow: '0 4px 12px rgba(255, 255, 255, 0.3)',
                       padding: '10px',
                       borderRadius: '5px',
                       textAlign: 'center',
@@ -281,7 +315,7 @@ const Events = () => {
                       height='100%'
                       sx={{ objectFit: 'cover', boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)', }}
                     />
-                  <NavLink to="/tutors" style={{ textDecoration: 'none', color: '#fff' }}>
+                  <NavLink to="/events" style={{ textDecoration: 'none', color: '#fff' }}>
                   <Box
                     sx={{
                       position: 'absolute',
@@ -290,6 +324,7 @@ const Events = () => {
                       width: '150px',
                       height: '100px',
                       transform: 'translate(-50%, -50%)',
+                      boxShadow: '0 4px 12px rgba(255, 255, 255, 0.3)',
                       backgroundColor: 'rgba(0, 0, 0, 0.5)',
                       padding: '10px',
                       borderRadius: '5px',
@@ -325,6 +360,7 @@ const Events = () => {
                       width: '150px',
                       height: '100px',
                       transform: 'translate(-50%, -50%)',
+                      boxShadow: '0 4px 12px rgba(255, 255, 255, 0.3)',
                       backgroundColor: 'rgba(0, 0, 0, 0.5)',
                       padding: '10px',
                       borderRadius: '5px',
@@ -360,6 +396,7 @@ const Events = () => {
                       width: '150px',
                       height: '100px',
                       transform: 'translate(-50%, -50%)',
+                      boxShadow: '0 4px 12px rgba(255, 255, 255, 0.3)',
                       backgroundColor: 'rgba(0, 0, 0, 0.5)',
                       padding: '10px',
                       borderRadius: '5px',
@@ -395,6 +432,7 @@ const Events = () => {
                       width: '150px',
                       height: '100px',
                       transform: 'translate(-50%, -50%)',
+                      boxShadow: '0 4px 12px rgba(255, 255, 255, 0.3)',
                       backgroundColor: 'rgba(0, 0, 0, 0.5)',
                       padding: '10px',
                       borderRadius: '5px',
@@ -421,7 +459,7 @@ const Events = () => {
                       height='100%'
                       sx={{ objectFit: 'cover', boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)', }}
                     />
-                  <NavLink to="/tutors" style={{ textDecoration: 'none', color: '#fff' }}>
+                  <NavLink to="/chemistry_class" style={{ textDecoration: 'none', color: '#fff' }}>
                   <Box
                     sx={{
                       position: 'absolute',
@@ -430,6 +468,7 @@ const Events = () => {
                       width: '150px',
                       height: '100px',
                       transform: 'translate(-50%, -50%)',
+                      boxShadow: '0 4px 12px rgba(255, 255, 255, 0.3)',
                       backgroundColor: 'rgba(0, 0, 0, 0.5)',
                       padding: '10px',
                       borderRadius: '5px',
@@ -448,100 +487,7 @@ const Events = () => {
           </div>
       </div>
 
-            {/* Footer Section */}
-      <Box style={{ position: 'relative', width: '100%' }}>
-        <Box
-          component="img"
-          alt="backgroundImg"
-          src={school}
-          width="100%"
-          height="15rem"
-          bottom="0"
-          sx={{ objectFit: 'cover' }}
-        />
-        {/* Footer Box container */}
-        <Box
-          sx={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            display: 'flex',
-            flexDirection: isSmallScreen ? 'column' : 'row',
-            padding: '0 40px 0 40px',
-            alignItems: 'center',
-            justifyContent: isSmallScreen ? 'center' : 'space-between',
-            backgroundColor: 'rgba(0, 0, 0, 0.5)',
-            color: 'dark',
-            width: '100%',
-            height: '240px',
-          }}
-        >
-          <Box sx={{ padding: isSmallScreen ? '0 0 0 10px' : '0 0 0 0' }}>
-            <Typography
-              sx={{
-                color: '#fff !important',
-                fontFamily: 'Pacifico, cursive',
-                fontSize: isSmallScreen ? '18px' : '25px',
-                fontWeight: '400',
-                justifyContent: 'right gap={2}',
-                fontStyle: 'normal',
-              }}
-            >
-              GoTECH_EDU
-            </Typography>
-            <Typography
-              sx={{
-                color: '#fff !important',
-                fontFamily: 'Quicksand',
-                fontWeight: '400',
-                justifyContent: 'right gap={2}',
-                fontStyle: 'normal',
-              }}
-            >
-              Your excellence education is guaranteed.
-            </Typography>
-            <Typography
-              sx={{
-                color: '#fff !important',
-                fontFamily: 'Quicksand',
-                fontWeight: '400',
-                justifyContent: 'right gap={2}',
-                fontStyle: 'normal',
-              }}
-            >
-              All rights reserved.
-            </Typography>
-          </Box>
-          <Box>
-            <Typography
-              sx={{
-                color: '#fff !important',
-                fontFamily: 'Pacifico, cursive',
-                fontSize: isSmallScreen ? '18px' : '25px',
-                fontWeight: '400',
-                justifyContent: 'right gap={2}',
-                fontStyle: 'normal',
-              }}
-            >
-              Reach out on:
-            </Typography>
-            <Box>
-              <IconButton href="#" target="_blank" rel="noopener" sx={{ color: '#fff' }}>
-                <Facebook />
-              </IconButton>
-              <IconButton href="#" target="_blank" rel="noopener" sx={{ color: '#fff' }}>
-                <Twitter />
-              </IconButton>
-              <IconButton href="#" target="_blank" rel="noopener" sx={{ color: '#fff' }}>
-                <Instagram />
-              </IconButton>
-              <IconButton href="#" target="_blank" rel="noopener" sx={{ color: '#fff' }}>
-                <LinkedIn />
-              </IconButton>
-            </Box>
-          </Box>
-        </Box>
-      </Box>
+      <Footer/>
     </div>
   );
 };
