@@ -1,0 +1,7 @@
+.swiper-button-next {
+    right: 40px; /* Move the right arrow backwards by 40px */
+  }
+  .swiper-button-prev {
+    left: 40px; /* Move the left arrow forwards by 40px */
+  }
+  

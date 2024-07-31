@@ -16,29 +16,30 @@ import hall from 'Assets/school_pics/sch_hall.jpg';
 import sch_ent from 'Assets/school_pics/sch_ent.jpg';
 import sch_reharsal from 'Assets/school_pics/sch_reharsal.jpg';
 import sch_sick from 'Assets/school_pics/sch_sick.jpg';
+import 'swiper/css';
 
 const Facilities = () => {
   const isSmallScreen = useMediaQuery('(max-width:800px)');
   const slides = [
-    { image: bio, title: 'Title 1', text: 'Lorem ipsum 1' },
-    { image: field, title: 'Title 2', text: 'Lorem ipsum 2' },
-    { image: wrksp, title: 'Title 3', text: 'Lorem ipsum 3' },
-    { image: sch_lab, title: 'Title 4', text: 'Lorem ipsum 4' },
-    { image: hall, title: 'Title 5', text: 'Lorem ipsum 5' },
-    { image: sch_ent, title: 'Title 6', text: 'Lorem ipsum 6' },
-    { image: sch_sick, title: 'Title 6', text: 'Lorem ipsum 6' },
-    { image: classrm, title: 'Title 6', text: 'Lorem ipsum 6' },
-    { image: hostel, title: 'Title 6', text: 'Lorem ipsum 6' },
-    { image: sch_reharsal, title: 'Title 6', text: 'Lorem ipsum 6' },
+    { image: bio, title: 'Biology Laboratory', text: 'Lorem ipsum 1' },
+    { image: field, title: 'Field', text: 'Lorem ipsum 2' },
+    { image: wrksp, title: 'Work Shop', text: 'Lorem ipsum 3' },
+    { image: sch_lab, title: 'Laboratory', text: 'Lorem ipsum 4' },
+    { image: hall, title: 'Hall', text: 'Lorem ipsum 5' },
+    { image: sch_ent, title: 'Entrance', text: 'Lorem ipsum 6' },
+    { image: sch_sick, title: 'Sickbay', text: 'Lorem ipsum 7' },
+    { image: classrm, title: 'Class Room', text: 'Lorem ipsum 8' },
+    { image: hostel, title: 'Hostel', text: 'Lorem ipsum 9' },
+    { image: sch_reharsal, title: 'School Reharsal', text: 'Lorem ipsum 10' },
   ];
 
   return (
     <div style={{ position: 'relative', display: 'block' }}>
-      <Box sx={{ margin: '1rem' }}>
+      <Box sx={{ margin: '1rem 4rem 1rem 4rem', }}>
         <Swiper
           spaceBetween={30}
           centeredSlides={true}
-          slidesPerView={1}
+          slidesPerView={isSmallScreen ? 1 : 1.5}
           navigation={true}
           pagination={{ clickable: true }}
           loop={true}
@@ -46,14 +47,21 @@ const Facilities = () => {
           className="mySwiper"
         >
           {slides.map((slide, index) => (
-            <SwiperSlide key={index} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+            <SwiperSlide key={index} style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%' }}>
               <Box
                 sx={{
-                  width: isSmallScreen ? '80%' : '60%',
+                  width: '100%',
                   transform: 'scale(1)',
-                  transition: 'transform 0.5s ease',
+                  transition: 'transform 0.5s ease, opacity 0.5s ease',
                   '&.swiper-slide-active': {
-                    transform: isSmallScreen ? 'scale(1.1)' : 'scale(1.3)',
+                    transform: 'scale(1.1)', // Increased scale for the active slide
+                    opacity: 1,
+                    zIndex: 2,
+                  },
+                  '&.swiper-slide-prev, &.swiper-slide-next': {
+                    transform: 'scale(0.9)',
+                    opacity: 0.7,
+                    zIndex: 1,
                   },
                 }}
               >
@@ -62,7 +70,7 @@ const Facilities = () => {
                     backgroundImage: `url(${slide.image})`,
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
-                    height: 200,
+                    height: 400,
                     display: 'flex',
                     justifyContent: 'center',
                     alignItems: 'center',
@@ -85,8 +93,20 @@ const Facilities = () => {
             </SwiperSlide>
           ))}
         </Swiper>
+
+        <Box>
+          section
+        </Box>
       </Box>
       <Footer />
+      <style jsx global>{`
+        .swiper-button-next {
+          right: 80px; /* Move the right arrow backwards by 40px */
+        }
+        .swiper-button-prev {
+          left: 80px; /* Move the left arrow forwards by 40px */
+        }
+      `}</style>
     </div>
   );
 };
