@@ -11,6 +11,8 @@ import Chemistry from './Scenes/Home/pages/chemistry';
 import Facilities from './Scenes/Home/pages/our_school';
 import Tutors from './Scenes/Home/pages/tutors';
 import Events from './Scenes/Home/pages/events';
+import Excursion from './Scenes/Home/pages/excursion';
+import Courses from './Scenes/Home/pages/courses';
 import Login from './Scenes/Auth/Login'; // Corrected import
 import Register from './Scenes/Auth/Register'; // Corrected import
 import '../src/App.css'
@@ -34,6 +36,8 @@ function App() {
               <Route path='/our_faces' element={<Faces />} />
               <Route path='/chemistry_class' element={<Chemistry />} />
               <Route path='/school_facilities' element={<Facilities />} />
+              <Route path='/excursions' element={<Excursion />} />
+              <Route path='/courses' element={<Courses />} />
               <Route path="/login" element={<Login />} /> 
               <Route path="/register" element={<Register />} />
             </Route>

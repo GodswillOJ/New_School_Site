@@ -199,7 +199,7 @@ const Events = () => {
                 {['Testimonial 1', 'Testimonial 2', 'Testimonial 3', 'Testimonial 4'].map((testimonial, index) => (
                   <Box key={index} sx={{ 
                     display: 'flex',
-                    gap: '20px',
+                    alignItems: 'center',
                     mb: 4,
                     boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
                   }}>
@@ -212,14 +212,14 @@ const Events = () => {
                         alt="testimonial image"
                         src={student_[index % student_.length].image}
                         onError={(e) => e.target.src = school}
-                        width="100%"
-                        height="100%"
-                        sx={{ objectFit: 'cover', boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)', }}
+                        width="25%"
+                        height="50%"
+                        sx={{ objectFit: 'cover', borderRadius: '50%', margin: '40px', boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)', }}
                       />
                     </Box>
 
                       {/* Text Container */}
-                      <Box sx={{ flex: '2', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
+                      <Box sx={{ flex: '3', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
                         <Typography variant="h3">{['Chinedu', 'Tunde', 'Funke', 'Ejiro'][index]}</Typography>
                         <Typography variant="body1">{`Class: ${['JSS1', 'JSS2', 'JSS3', 'SS1', 'SS2', 'SS3'][index % 6]}`}</Typography>
                         <Typography variant="body2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor.</Typography>

@@ -17,7 +17,7 @@ import pagent from 'Assets/pagent.jpg';
 import tutors from 'Assets/our_tutors.jpg';
 import road from 'Assets/road.jpg';
 import chemistry from 'Assets/chemistry_class.jpg';
-import { Pagination, Navigation } from 'swiper/modules';
+import { Pagination, Navigation, Autoplay } from 'swiper/modules';
 import Footer from 'Components/Footer';
 
 
@@ -290,106 +290,111 @@ const Home = () => {
       <div style={{ margin: '4rem 1rem 2rem 1rem', color: 'white' }}>
           {/* slider */}
           <Swiper
-            spaceBetween={20}
-            slidesPerView={3}
-            pagination={{ clickable: true }}
-            navigation
-            modules={[Pagination, Navigation]}
-          >
-            {[pagent, tutors, road, chemistry, school, excur, courses].map((src, index) => (
-              <SwiperSlide key={index}>
-                <Box
-                  sx={{
-                    backgroundColor: '#eee',
-                    borderRadius: '8px',
-                    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)', // Adds a fine shadow
-                    overflow: 'hidden',
-                    position: 'relative',
-                  }}
-                >
-                  <Box
-                    component="img"
-                    alt="backgroundImg"
-                    src={src}
-                    width="100%"
-                    height={isBelow650px ? '100px' : '200px'}
-                    sx={{ objectFit: 'cover' }}
-                  />
+              spaceBetween={20}
+              slidesPerView={3}
+              pagination={{ clickable: true }}
+              navigation
+              modules={[Pagination, Navigation, Autoplay]}
+              autoplay={{
+                delay: 3000, // 3 seconds delay for each slide
+                disableOnInteraction: false,
+              }}
+              loop={true} // enables infinite loop
+            >
+              {[pagent, tutors, road, chemistry, school, excur, courses].map((src, index) => (
+                <SwiperSlide key={index}>
                   <Box
                     sx={{
-                      position: 'absolute',
-                      top: '50%',
-                      left: '50%',
-                      transform: 'translate(-50%, -50%)',
-                      display: 'flex',
-                      flexDirection: 'column',
-                      justifyContent: 'center',
-                      alignItems: 'center',
-                      textAlign: 'center',
+                      backgroundColor: '#eee',
+                      borderRadius: '8px',
+                      boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)', // Adds a fine shadow
+                      overflow: 'hidden',
+                      position: 'relative',
                     }}
                   >
-                    <Typography
-                      variant="body1"
-                      display= 'flex'
-                      flexDirection={'column'}
+                    <Box
+                      component="img"
+                      alt="backgroundImg"
+                      src={src}
+                      width="100%"
+                      height={isBelow650px ? '100px' : '200px'}
+                      sx={{ objectFit: 'cover' }}
+                    />
+                    <Box
                       sx={{
-                        hover: '#b14606',
-                        fontSize: isSmallScreen ? '8px' : '20px',
-                        padding: '0',
-                        fontFamily: 'PT Serif, serif',
-                        fontStyle: 'italic',
+                        position: 'absolute',
+                        top: '50%',
+                        left: '50%',
+                        transform: 'translate(-50%, -50%)',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        textAlign: 'center',
                       }}
                     >
-                      <Box component="span" style={{ fontWeight: 'bold' }}>
-                        {index === 0 && 'Check Out Our Faces of GoTECH_EDU.'}
-                        {index === 1 && 'Meet Our Tutors.'}
-                        {index === 2 && 'Events: Our upcoming road tour.'}
-                        {index === 3 && 'Our Chemistry Class.'}
-                        {index === 4 && 'Our School and Facilities.'}
-                        {index === 5 && 'Our Excursions.'}
-                        {index === 6 && 'Our Courses.'}
-                      </Box>
-                      {index === 0 && (
-                        <NavLink to='/our_faces' style={{ fontWeight: 'bold', color: '#21daee' }}>
-                          See more..
-                        </NavLink>
-                      )}
-                      {index === 1 && (
-                        <NavLink to='/tutors' style={{ fontWeight: 'bold', color: '#21daee' }}>
-                          See more..
-                        </NavLink>
-                      )}
-                      {index === 2 && (
-                        <NavLink to='/events' style={{ fontWeight: 'bold', color: '#21daee' }}>
-                          See more..
-                        </NavLink>
-                      )}
-                      {index === 3 && (
-                        <NavLink to='/chemistry_class' style={{ fontWeight: 'bold', color: '#21daee' }}>
-                          See more..
-                        </NavLink>
-                      )}
-                      {index === 4 && (
-                        <NavLink to='/school_facilities' style={{ fontWeight: 'bold', color: '#21daee' }}>
-                          See more..
-                        </NavLink>
-                      )}
-                      {index === 5 && (
-                        <NavLink to='/excursions' style={{ fontWeight: 'bold', color: '#21daee' }}>
-                          See more..
-                        </NavLink>
-                      )}
-                      {index === 6 && (
-                        <Link to='/courses' style={{ fontWeight: 'bold', color: '#21daee' }}>
-                          See more..
-                        </Link>
-                      )}
-                    </Typography>
+                      <Typography
+                        variant="body1"
+                        display="flex"
+                        flexDirection={'column'}
+                        sx={{
+                          hover: '#b14606',
+                          fontSize: isSmallScreen ? '8px' : '20px',
+                          padding: '0',
+                          fontFamily: 'PT Serif, serif',
+                          fontStyle: 'italic',
+                        }}
+                      >
+                        <Box component="span" style={{ fontWeight: 'bold' }}>
+                          {index === 0 && 'Check Out Our Faces of GoTECH_EDU.'}
+                          {index === 1 && 'Meet Our Tutors.'}
+                          {index === 2 && 'Events: Our upcoming road tour.'}
+                          {index === 3 && 'Our Chemistry Class.'}
+                          {index === 4 && 'Our School and Facilities.'}
+                          {index === 5 && 'Our Excursions.'}
+                          {index === 6 && 'Our Courses.'}
+                        </Box>
+                        {index === 0 && (
+                          <NavLink to='/our_faces' style={{ fontWeight: 'bold', color: '#21daee' }}>
+                            See more..
+                          </NavLink>
+                        )}
+                        {index === 1 && (
+                          <NavLink to='/tutors' style={{ fontWeight: 'bold', color: '#21daee' }}>
+                            See more..
+                          </NavLink>
+                        )}
+                        {index === 2 && (
+                          <NavLink to='/events' style={{ fontWeight: 'bold', color: '#21daee' }}>
+                            See more..
+                          </NavLink>
+                        )}
+                        {index === 3 && (
+                          <NavLink to='/chemistry_class' style={{ fontWeight: 'bold', color: '#21daee' }}>
+                            See more..
+                          </NavLink>
+                        )}
+                        {index === 4 && (
+                          <NavLink to='/school_facilities' style={{ fontWeight: 'bold', color: '#21daee' }}>
+                            See more..
+                          </NavLink>
+                        )}
+                        {index === 5 && (
+                          <NavLink to='/excursions' style={{ fontWeight: 'bold', color: '#21daee' }}>
+                            See more..
+                          </NavLink>
+                        )}
+                        {index === 6 && (
+                          <NavLink to='/courses' style={{ fontWeight: 'bold', color: '#21daee' }}>
+                            See more..
+                          </NavLink>
+                        )}
+                      </Typography>
+                    </Box>
                   </Box>
-                </Box>
-              </SwiperSlide>
-            ))}
-          </Swiper>
+                </SwiperSlide>
+              ))}
+            </Swiper>
         </div>
 
       <Box 

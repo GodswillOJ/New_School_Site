@@ -300,7 +300,7 @@ const Tutors = () => {
                     height='100%'
                     sx={{ objectFit: 'cover', boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)', }}
                   />
-                <NavLink to="/tutors" style={{ textDecoration: 'none', color: '#fff' }}>
+                <NavLink to="/excursions" style={{ textDecoration: 'none', color: '#fff' }}>
                 <Box
                   sx={{
                     position: 'absolute',
@@ -335,7 +335,7 @@ const Tutors = () => {
                     height='100%'
                     sx={{ objectFit: 'cover', boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)', }}
                   />
-                <NavLink to="/tutors" style={{ textDecoration: 'none', color: '#fff' }}>
+                <NavLink to="/courses" style={{ textDecoration: 'none', color: '#fff' }}>
                 <Box
                   sx={{
                     position: 'absolute',
@@ -370,7 +370,7 @@ const Tutors = () => {
                     height='100%'
                     sx={{ objectFit: 'cover', boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)', }}
                   />
-                <NavLink to="/tutors" style={{ textDecoration: 'none', color: '#fff' }}>
+                <NavLink to="/school_facilities" style={{ textDecoration: 'none', color: '#fff' }}>
                 <Box
                   sx={{
                     position: 'absolute',
