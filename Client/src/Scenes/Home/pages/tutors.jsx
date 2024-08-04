@@ -120,7 +120,9 @@ const Tutors = () => {
         p: 2,
         maxWidth: '80%',
         mx: 'auto',
-        mt: 4
+        mt: 4,
+        maxHeight: '80vh', // Set a maximum height
+        overflowY: 'auto', // Enable vertical scrolling
         }}
     >
         <IconButton

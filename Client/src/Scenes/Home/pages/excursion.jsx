@@ -315,7 +315,7 @@ const Excursion = () => {
                 </Box>
               </Box>
 
-            {/* faces */}
+            {/* tutors */}
               <Box sx={{ pb:'10px' }}>
                 <Box sx={{ position: 'relative', width: '100%', height: '100%' }}>
                   <img
@@ -467,7 +467,7 @@ const Excursion = () => {
                       height='100%'
                       sx={{ objectFit: 'cover', boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)', }}
                     />
-                  <NavLink to="/school" style={{ textDecoration: 'none', color: '#fff' }}>
+                  <NavLink to="/school_facilities" style={{ textDecoration: 'none', color: '#fff' }}>
                   <Box
                     sx={{
                       position: 'absolute',

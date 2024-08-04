@@ -45,7 +45,7 @@ const Facilities = () => {
 
   return (
     <div style={{ position: 'relative', display: 'block' }}>
-      <Box sx={{ margin: '1rem 4rem 1rem 4rem', borderRadius: '5px', }}>
+      <Box sx={{ margin: isSmallScreen ? '1rem 1rem 1rem 1rem' : '1rem 4rem 1rem 4rem', borderRadius: '5px', }}>
         <Swiper
           spaceBetween={30}
           centeredSlides={true}
