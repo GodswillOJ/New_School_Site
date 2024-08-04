@@ -1,9 +1,5 @@
 import { Post, User } from '../models/User.js';
-// import OverallStat from '../models/OverallStat.js';
-// import { Product } from '../models/productSchema.js';
-// import Transaction from '../models/transactions.js';
-// import { Category, Message, MessageModel } from '../models/category.js';
-import bcrypt from 'bcrypt'
+import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
 import nodemailer from 'nodemailer';
