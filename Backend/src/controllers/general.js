@@ -22,7 +22,7 @@ export const insertUser = async (req, res) => {
     return res.status(400).json({ error: 'User already exists on the site' });
   }
 
-  // Hash the password
+  // Hash the password year
   const hashedPassword = await bcrypt.hash(password, 10);
   const image = req.file.filename
 
