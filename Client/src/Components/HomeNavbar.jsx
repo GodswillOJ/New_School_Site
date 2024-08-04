@@ -40,7 +40,7 @@ const Navbar = () => {
               <NavLink href="/login">
                 Login
               </NavLink>
-              <NavLink href="/register">
+              <NavLink href="/registerStudent">
                 Register
               </NavLink>
             </Box>

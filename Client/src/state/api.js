@@ -4,12 +4,12 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 export const api = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: 'https://go-tech-school.onrender.com/api' }),
   reducerPath: 'api',
-  tagTypes: ['User', 'Home', 'Faces', 'Facilities', 'Tutors', 'Excursion', 'Events', 'Courses', 'Chemistry'],
+  tagTypes: ['User', 'Home', 'Faces', 'Facilities', 'Tutors', 'Excursion', 'Events', 'Courses', 'Chemistry', 'UserVerify', 'AdminVerify'],
   endpoints: (builder) => ({
 
     registerUser: builder.mutation({
       query: (formData) => ({
-        url: '/register',
+        url: '/registerStudent',
         method: 'POST',
         body: formData,
         headers: {
@@ -68,6 +68,16 @@ export const api = createApi({
       providesTags: ['Excursion'],
     }),
 
+    getUserVerify: builder.query({
+      query: (userID) => `/user_verify/${userID}`,
+      providesTags: ['UserVerify'],
+    }),
+
+    getAdminVerify: builder.query({
+      query: (userID) => `/admin_verify/${userID}`,
+      providesTags: ['AdminVerify'],
+    }),
+
   }),
 });
 
@@ -82,4 +92,5 @@ export const {
     useGetCoursesQuery,
     useGetEventsQuery,
     useGetChemistryQuery,
+    useGetUserVerifyQuery,
  } = api;

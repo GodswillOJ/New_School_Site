@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { useRegisterUserMutation } from '../../state/api';
 import { Box, IconButton, Typography, Link } from '@mui/material';
 import { Facebook, Twitter, Instagram, LinkedIn } from '@mui/icons-material';
-import { setLoginStatus } from '../../state/index';;
+import { setLoginStatus } from '../../state/index';
 
 const Register = () => {
   const [username, setUsername] = useState('');

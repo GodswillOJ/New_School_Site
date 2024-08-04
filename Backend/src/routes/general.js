@@ -3,6 +3,13 @@ import path from 'path';
 import multer from 'multer';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
+import {
+  fetchUserData,
+  insertUser,
+  // insertAdmin,
+  LoginVerify,
+  LoginVerifyUser,
+} from '../controllers/general.js';
 
 
 const router = express.Router();
@@ -32,5 +39,13 @@ const storage = multer.diskStorage({
 // Storage of image
 const upload = multer({ storage: storage });
 
+router.get('/', );
+router.get('/user_verify/:id', fetchUserData);
+router.post('/register_@admin', upload.single('file'),);
+router.post('/registerStudent', upload.single('file'), insertUser);
+
+
+router.use(express.urlencoded({ extended: true }));
+router.use(express.json());
 
 export default router;

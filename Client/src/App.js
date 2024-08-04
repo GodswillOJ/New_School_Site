@@ -15,6 +15,7 @@ import Excursion from './Scenes/Home/pages/excursion';
 import Courses from './Scenes/Home/pages/courses';
 import Login from './Scenes/Auth/Login'; // Corrected import
 import Register from './Scenes/Auth/Register'; // Corrected import
+import UserVerify from './Scenes/Auth/verify/user_verify'; 
 import '../src/App.css'
 
 function App() {
@@ -39,7 +40,8 @@ function App() {
               <Route path='/excursions' element={<Excursion />} />
               <Route path='/courses' element={<Courses />} />
               <Route path="/login" element={<Login />} /> 
-              <Route path="/register" element={<Register />} />
+              <Route path="/registerStudent" element={<Register />} />
+              <Route path="/user_verify" element={<UserVerify />} />
             </Route>
           </Routes>
         </ThemeProvider>
