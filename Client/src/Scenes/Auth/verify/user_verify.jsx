@@ -8,7 +8,7 @@ const UserVerify = () => {
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState(null);
 
-    console.log('dash: ', data)
+    console.log('user_data: ', data)
   
   
     if (loading) {
