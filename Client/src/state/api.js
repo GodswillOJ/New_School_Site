@@ -2,7 +2,7 @@ import { getFormLabelUtilityClasses } from '@mui/material';
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 export const api = createApi({
-  baseQuery: fetchBaseQuery({ baseUrl: 'https://go-tech-school.onrender.com/api' }),
+  baseQuery: fetchBaseQuery({ baseUrl: 'https://new-school-site.onrender.com/api' }),
   reducerPath: 'api',
   tagTypes: ['User', 'Home', 'Faces', 'Facilities', 'Tutors', 'Excursion', 'Events', 'Courses', 'Chemistry', 'UserVerify', 'AdminVerify'],
   endpoints: (builder) => ({
