@@ -11,7 +11,6 @@ import {
   LoginVerifyUser,
 } from '../controllers/general.js';
 
-
 const router = express.Router();
 
 // Resolve __dirname in ES modules
@@ -39,13 +38,11 @@ const storage = multer.diskStorage({
 // Storage of image
 const upload = multer({ storage: storage });
 
-router.get('/', );
+router.get('/', fetchUserData);
 router.get('/user_verify/:id', fetchUserData);
-router.post('/register_@admin', upload.single('file'),);
+router.post('/register_@admin', upload.single('file'), (req, res) => {
+  // Handle admin registration here
+});
 router.post('/registerStudent', upload.single('file'), insertUser);
-
-
-router.use(express.urlencoded({ extended: true }));
-router.use(express.json());
 
 export default router;

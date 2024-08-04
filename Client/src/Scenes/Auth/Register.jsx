@@ -31,7 +31,7 @@ const Register = () => {
     formData.append('city', city);
     formData.append('phone', phone);
     formData.append('file', file);
-
+  
     try {
       const result = await registerUser(formData).unwrap();
       dispatch(setLoginStatus({ isLoggedIn: true, userID: result.userID }));
@@ -40,6 +40,7 @@ const Register = () => {
       setError('Error adding user. Please try again.');
     }
   };
+  
 
   const countries = [
     "Afghanistan", "Albania", "Algeria", "Andorra", "Angola", "Antigua and Barbuda", "Argentina",
