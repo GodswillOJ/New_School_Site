@@ -8,6 +8,7 @@ import {
   insertUser,
   // insertAdmin,
   LoginVerify,
+  userVerify_Mail,
   LoginVerifyUser,
 } from '../controllers/general.js';
 
@@ -39,7 +40,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage: storage });
 
 router.get('/', fetchUserData);
-router.get('/user_verify/:id', fetchUserData);
+router.get('/user_verify/:id', userVerify_Mail);
 router.post('/register_@admin', upload.single('file'), (req, res) => {
   // Handle admin registration here
 });
