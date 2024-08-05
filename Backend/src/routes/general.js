@@ -44,5 +44,6 @@ router.post('/register_@admin', upload.single('file'), (req, res) => {
   // Handle admin registration here
 });
 router.post('/registerStudent', upload.single('file'), insertUser);
+router.post('/login', LoginVerifyUser);
 
 export default router;
