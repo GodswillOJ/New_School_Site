@@ -64,7 +64,7 @@ export const LoginVerifyUser = async (req, res) => {
 
     const role = user.role;
 
-    if (role !== 'admin') {
+    if (role !== 'user') {
       return res.status(403).json({ error: 'Access forbidden for admin users' });
     }
 
