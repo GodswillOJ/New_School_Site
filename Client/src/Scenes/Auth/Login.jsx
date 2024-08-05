@@ -18,7 +18,7 @@ const Login = () => {
     e.preventDefault();
     try {
       const result = await loginUser({ email, password }).unwrap();
-      localStorage.setItem('access_token', result.accessToken);
+      localStorage.setItem('access_token', result.access_token);
       localStorage.setItem('userID', result.userID);
       dispatch(setLoginStatus({ isLoggedIn: true, userID: result.userID }));
       navigate('/user/dashboard');

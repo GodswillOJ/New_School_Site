@@ -47,10 +47,10 @@ export const insertUser = async (req, res) => {
 
 // user login
 export const LoginVerifyUser = async (req, res) => {
-  const { username, password } = req.body;
+  const { email, password } = req.body;
 
   try {
-    const user = await User.findOne({ username });
+    const user = await User.findOne({ email });
 
     if (!user) {
       return res.status(401).json({ error: 'Invalid credentials' });
@@ -80,10 +80,10 @@ export const LoginVerifyUser = async (req, res) => {
 
 // admin login
 export const LoginVerify = async (req, res) => {
-  const { username, password } = req.body;
+  const { email, password } = req.body;
 
   try {
-    const user = await User.findOne({ username });
+    const user = await User.findOne({ email });
 
     if (!user) {
       return res.status(401).json({ error: 'Invalid credentials' });
@@ -97,8 +97,8 @@ export const LoginVerify = async (req, res) => {
 
     const role = user.role;
 
-    if (role !== 'user') {
-      return res.status(403).json({ error: 'Access forbidden for admin users' });
+    if (role !== 'admin') {
+      return res.status(403).json({ error: 'Access forbidden for regular users' });
     }
 
     const token = jwt.sign({ userId: user._id, role }, JWT_Phrase, { expiresIn: '1d' });
@@ -110,6 +110,7 @@ export const LoginVerify = async (req, res) => {
     res.status(500).json({ error: 'Internal Server Error' });
   }
 };
+
 
 export const userVerify_Mail = async (req, res) => {
   try {
