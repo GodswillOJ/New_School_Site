@@ -169,7 +169,7 @@ const Home = () => {
                     </Typography>
 
                   
-                      <NavLink to='/register'>
+                      <NavLink to='/registerStudent'>
                           <button className="glitter-button">Register</button>
                       </NavLink>
                   
