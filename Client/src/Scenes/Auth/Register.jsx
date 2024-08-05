@@ -124,7 +124,7 @@ const Form = ({ onSubmit, username, setUsername, email, setEmail, password, setP
           <p>  <b>Please complete fill the form below.</b> </p>
           <div className="user_img">
             <label>Profile Image:</label>
-            <input type="file" value={file} onChange={(e) => setFile(e.target.files[0])} />
+            <input type="file" onChange={(e) => setFile(e.target.files[0])} />
           </div>
           <div>
             <label>Username:</label>
