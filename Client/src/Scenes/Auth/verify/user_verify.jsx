@@ -22,7 +22,7 @@ const UserVerify = () => {
     return (
       <div id="VerifyCont">
         <div id="Verify_info">
-          <h1>Admin Verify Mail</h1>
+          <h1>Student Verification Mail</h1>
           <div>
             {data ? (
               <p>
