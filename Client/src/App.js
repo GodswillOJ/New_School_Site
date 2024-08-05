@@ -41,7 +41,7 @@ function App() {
               <Route path='/courses' element={<Courses />} />
               <Route path="/login" element={<Login />} /> 
               <Route path="/registerStudent" element={<Register />} />
-              <Route path="/user_verify" element={<UserVerify />} />
+              <Route path="/user_verify/:id" element={<UserVerify />} />
             </Route>
           </Routes>
         </ThemeProvider>
