@@ -4,7 +4,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 export const api = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: 'https://new-school-site.onrender.com/api' }),
   reducerPath: 'api',
-  tagTypes: ['User', 'Home', 'Faces', 'Facilities', 'Tutors', 'Excursion', 'Events', 'Courses', 'Chemistry', 'UserVerify', 'AdminVerify'],
+  tagTypes: ['User', 'Home', 'Faces', 'Facilities', 'Tutors', 'Excursion', 'Events', 'Courses', 'Chemistry', 'UserVerify', 'AdminVerify', 'StudentDashboard'],
   endpoints: (builder) => ({
 
     registerUser: builder.mutation({
@@ -68,6 +68,11 @@ export const api = createApi({
       providesTags: ['Excursion'],
     }),
 
+    getStudentDashboard: builder.query({
+      query: () => '/student/dashboard',
+      providesTags: ['StudentDashboard'],
+    }),
+
     getUserVerify: builder.query({
       query: (userID) => `/user_verify/${userID}`,
       providesTags: ['UserVerify'],
@@ -93,4 +98,5 @@ export const {
     useGetEventsQuery,
     useGetChemistryQuery,
     useGetUserVerifyQuery,
+    useGetStudentDashboardQuery,
  } = api;

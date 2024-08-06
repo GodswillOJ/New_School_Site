@@ -21,7 +21,7 @@ const Login = () => {
       localStorage.setItem('access_token', result.access_token);
       localStorage.setItem('userID', result.userID);
       dispatch(setLoginStatus({ isLoggedIn: true, userID: result.userID }));
-      navigate('/user/dashboard');
+      navigate('/student/dashboard');
     } catch (error) {
       setError('Invalid email or password');
     }
