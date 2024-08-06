@@ -8,7 +8,11 @@ import {
   ArrowDropDownOutlined
 } from '@mui/icons-material';
 import { useDispatch } from "react-redux";
+<<<<<<< HEAD
 import { setMode, setLoginStatus } from "state/index";
+=======
+import { setMode, setLoginStatus } from "../state/index";
+>>>>>>> 0fc5f329cc57f6d2f9a34f3eef9ba9457cf00297
 import {
   AppBar,
   IconButton,
@@ -24,7 +28,11 @@ import {
 } from "@mui/material";
 import FlexBetween from "./flexBetween";
 import { useLocation, useNavigate } from 'react-router-dom';
+<<<<<<< HEAD
 import defaultProfile from 'Assets/profile.jpg'; // Import the default profile image
+=======
+import defaultProfile from '../assets/profile.jpg'; // Import the default profile image
+>>>>>>> 0fc5f329cc57f6d2f9a34f3eef9ba9457cf00297
 
 const Navbar = ({ user, isSidebarOpen, setIsSidebarOpen }) => {
   const dispatch = useDispatch();
