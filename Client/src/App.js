@@ -13,9 +13,11 @@ import Tutors from './Scenes/Home/pages/tutors';
 import Events from './Scenes/Home/pages/events';
 import Excursion from './Scenes/Home/pages/excursion';
 import Courses from './Scenes/Home/pages/courses';
+import Dashboard from './Scenes/Students/Dashboard/dashboard';
 import Login from './Scenes/Auth/Login'; // Corrected import
 import Register from './Scenes/Auth/Register'; // Corrected import
 import UserVerify from './Scenes/Auth/verify/user_verify'; 
+import Layout from "./Scenes/Layouts/Layout/index"; // for admin
 import '../src/App.css'
 
 function App() {
@@ -43,6 +45,12 @@ function App() {
               <Route path="/registerStudent" element={<Register />} />
               <Route path="/user_verify/:id" element={<UserVerify />} />
             </Route>
+
+            {/*Student Layouts */}
+            <Route element={<Layout/>}>
+              <Route path='/student/dashboard' element={<Dashboard />} />
+            </Route>
+
           </Routes>
         </ThemeProvider>
       </BrowserRouter>
