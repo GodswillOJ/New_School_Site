@@ -35,7 +35,7 @@ import profile from 'Assets/profile.jpg';
 
 const navItems = [
     { text: "dashboard", icon: <HomeOutlined />, path: "user/dashboard" },
-    { text: "Admin Operand", icon: null },
+    { text: "Student Section", icon: null },
     { text: "Products", icon: <ShoppingCartOutlined />, path: "/user/products" },
     { text: "Customers", icon: <Groups2Outlined />, path: "/user/customers" },
     { text: "Transactions", icon: <ReceiptLongOutlined />, path: "/user/view_transactions" },
@@ -89,10 +89,10 @@ const Sidebar = ({ user, drawerWidth, isSidebarOpen, setIsSidebarOpen, isNonMobi
                             <FlexBetween color={theme.palette.secondary.main}>
                                 <Box display="flex" alignItems="center" gap="0.5rem">
                                     <FlexBetween color={theme.palette.secondary.main}>
-                                        <Box display="flex" alignItems="center" ml="4rem">
+                                        <Box display="flex" alignItems="center" ml="2rem">
                                             <Link href="/" sx={{ textDecoration: 'none', color: 'inherit' }}>
                                                 <Typography variant="h4" fontWeight="bold">
-                                                    GO_Tech
+                                                    Go_tech_School
                                                 </Typography>
                                             </Link>
                                         </Box>

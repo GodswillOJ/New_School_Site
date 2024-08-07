@@ -18,6 +18,7 @@ import Login from './Scenes/Auth/Login'; // Corrected import
 import Register from './Scenes/Auth/Register'; // Corrected import
 import UserVerify from './Scenes/Auth/verify/user_verify'; 
 import Layout from "./Scenes/Layouts/Layout/index"; // for admin
+import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import '../src/App.css'
 
 function App() {
@@ -48,7 +49,11 @@ function App() {
 
             {/*Student Layouts */}
             <Route element={<Layout/>}>
-              <Route path='/student/dashboard' element={<Dashboard />} />
+              <Route path='/student/dashboard' element={
+                <PrivateRoute>
+                  <Dashboard />
+                </PrivateRoute>       
+              } />
             </Route>
 
           </Routes>

@@ -39,7 +39,7 @@ const Navbar = ({ user, isSidebarOpen, setIsSidebarOpen }) => {
   const handleClick = (event) => setAnchorEl(event.currentTarget);
   const handleClose = () => setAnchorEl(null);
 
-  const userImageUrl = `https://gotech-ecommerce.onrender.com/public/${user.image}`;
+  // const userImageUrl = `https://gotech-ecommerce.onrender.com/public/${user.image}`;
 
   useEffect(() => {
     setActive(pathname.substring(1));
@@ -48,7 +48,7 @@ const Navbar = ({ user, isSidebarOpen, setIsSidebarOpen }) => {
   const handleLogout = () => {
     localStorage.removeItem('access_token');
     dispatch(setLoginStatus(false));
-    navigate('/loginUser');
+    navigate('/login');
   };
 
   const userMenuItems = [
@@ -118,7 +118,7 @@ const Navbar = ({ user, isSidebarOpen, setIsSidebarOpen }) => {
                 <Box
                   component="img"
                   alt="profile"
-                  src={userImageUrl}
+                  // src={userImageUrl}
                   onError={(e) => e.target.src = defaultProfile}
                   height="32px"
                   width="32px"
