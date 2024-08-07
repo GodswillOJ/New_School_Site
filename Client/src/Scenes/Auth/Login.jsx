@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { useLoginUserMutation } from '../../state/api';
+import { useUserMutation } from '../../state/api';
 import { Box, IconButton, Typography, Link } from '@mui/material';
 import { Facebook, Twitter, Instagram, LinkedIn } from '@mui/icons-material';
 import { setLoginStatus } from '../../state/index';
@@ -10,7 +10,7 @@ const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
-  const [loginUser, { isLoading }] = useLoginUserMutation();
+  const [loginUser, { isLoading }] = useUserMutation();
   const navigate = useNavigate();
   const dispatch = useDispatch();
 

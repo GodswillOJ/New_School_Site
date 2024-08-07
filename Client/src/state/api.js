@@ -26,7 +26,7 @@ export const api = createApi({
       invalidatesTags: ['User'],
     }),
 
-    loginUser: builder.mutation({
+    User: builder.mutation({
       query: (credentials) => ({
         url: '/login',
         method: 'POST',
@@ -94,7 +94,7 @@ export const api = createApi({
 
 export const { 
   useRegisterUserMutation, 
-  useLoginUserMutation,
+  useUserMutation,
   useGetHomeQuery,
   useGetFacesQuery,
   useGetTutorsQuery,
@@ -104,6 +104,5 @@ export const {
   useGetEventsQuery,
   useGetChemistryQuery,
   useGetUserVerifyQuery,
-  useGetStudentDashboardQuery,
   useGetAdminVerifyQuery,
 } = api;
