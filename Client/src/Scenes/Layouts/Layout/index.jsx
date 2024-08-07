@@ -4,13 +4,13 @@ import { Outlet } from "react-router-dom";
 import { useSelector } from "react-redux";
 import Navbar from 'Components/NavBars/Navbar';
 import Sidebar from "Components/NavBars/SideBar";
-import { useUserMutation } from 'state/api';
+import { useGetStudentDashboardQuery } from 'state/api';
 
 const Layout = () => {
   const isNonMobile = useMediaQuery("(min-width: 1000px)");
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const { userID } = useSelector((state) => state.global.user);
-  const { data, error } = useUserMutation(userID);
+  const { data, error } = useGetStudentDashboardQuery(userID);
   console.log('data', data, error);
 
   return (
