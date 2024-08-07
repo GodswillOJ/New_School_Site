@@ -69,10 +69,10 @@ export const api = createApi({
     }),
 
     getStudentDashboard: builder.query({
-      query: () => '/student/dashboard',
+      query: (userID) => `/student/dashboard?id=${userID}`,
       providesTags: ['StudentDashboard'],
     }),
-
+    
     getUserVerify: builder.query({
       query: (userID) => `/user_verify/${userID}`,
       providesTags: ['UserVerify'],

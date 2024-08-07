@@ -9,9 +9,13 @@ import { useGetStudentDashboardQuery } from 'state/api';
 const Layout = () => {
   const isNonMobile = useMediaQuery("(min-width: 1000px)");
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
-  const { userID } = useSelector((state) => state.global.user);
-  const { data, error } = useGetStudentDashboardQuery(userID);
+  const userID = useSelector((state) => state.global.user?.userID); // Ensure this is not undefined
+  const { data, error } = useGetStudentDashboardQuery(userID, { skip: !userID }); // Only fetch if userID exists
   console.log('data', data, error);
+
+  if (error) {
+    console.error('Error fetching student dashboard:', error);
+  }
 
   return (
     <Box display={isNonMobile ? "flex" : "block"} width="100%" height="100vh">

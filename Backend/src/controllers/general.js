@@ -138,7 +138,7 @@ export const userVerify_Mail = async (req, res) => {
 };
 
 export const fetchUserData = async (req, res) => {
-  const { id } = req.query; // Use req.query if it's a query parameter, otherwise adjust as needed
+  const { id } = req.query; // Use req.query to retrieve the query parameter
   if (!id) {
     return res.status(400).json({ error: 'User ID is required' });
   }
