@@ -115,6 +115,9 @@ export const LoginVerify = async (req, res) => {
 export const userVerify_Mail = async (req, res) => {
   try {
     const { id } = req.params;
+    if (!id) {
+      return res.status(400).json({ error: 'User ID is required' });
+    }
     console.log(`Verifying user with ID: ${id}`);
 
     const updateInfo = await User.updateOne({ _id: id }, { $set: { is_verified: 1 } });
@@ -136,8 +139,11 @@ export const userVerify_Mail = async (req, res) => {
 
 export const fetchUserData = async (req, res) => {
   const { id } = req.params;
+  if (!id) {
+    return res.status(400).json({ error: 'User ID is required' });
+  }
   try {
-    const user = await User.findById({ _id: id });
+    const user = await User.findById(id);
     if (!user) {
       return res.status(404).json({ message: 'User not found' });
     }
