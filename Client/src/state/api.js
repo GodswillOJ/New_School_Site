@@ -1,12 +1,19 @@
-import { getFormLabelUtilityClasses } from '@mui/material';
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 export const api = createApi({
-  baseQuery: fetchBaseQuery({ baseUrl: 'https://new-school-site.onrender.com/api' }),
+  baseQuery: fetchBaseQuery({
+    baseUrl: 'https://new-school-site.onrender.com/api',
+    prepareHeaders: (headers, { getState }) => {
+      const token = getState().auth.token; // Adjust based on where your token is stored
+      if (token) {
+        headers.set('Authorization', `Bearer ${token}`);
+      }
+      return headers;
+    },
+  }),
   reducerPath: 'api',
   tagTypes: ['User', 'Home', 'Faces', 'Facilities', 'Tutors', 'Excursion', 'Events', 'Courses', 'Chemistry', 'UserVerify', 'AdminVerify', 'StudentDashboard'],
   endpoints: (builder) => ({
-
     registerUser: builder.mutation({
       query: (formData) => ({
         url: '/registerStudent',
@@ -82,21 +89,21 @@ export const api = createApi({
       query: (userID) => `/admin_verify/${userID}`,
       providesTags: ['AdminVerify'],
     }),
-
   }),
 });
 
 export const { 
-    useRegisterUserMutation, 
-    useLoginUserMutation,
-    useGetHomeQuery,
-    useGetFacesQuery,
-    useGetTutorsQuery,
-    useGetFacilitiesQuery,
-    useGetExcursionQuery,
-    useGetCoursesQuery,
-    useGetEventsQuery,
-    useGetChemistryQuery,
-    useGetUserVerifyQuery,
-    useGetStudentDashboardQuery,
- } = api;
+  useRegisterUserMutation, 
+  useLoginUserMutation,
+  useGetHomeQuery,
+  useGetFacesQuery,
+  useGetTutorsQuery,
+  useGetFacilitiesQuery,
+  useGetExcursionQuery,
+  useGetCoursesQuery,
+  useGetEventsQuery,
+  useGetChemistryQuery,
+  useGetUserVerifyQuery,
+  useGetStudentDashboardQuery,
+  useGetAdminVerifyQuery,
+} = api;
