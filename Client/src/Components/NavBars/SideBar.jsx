@@ -27,27 +27,29 @@ import {
     AdminPanelSettingsOutlined,
     TrendingUpOutlined,
     PieChartOutlined,
-    PointOfSaleOutlined
+    PointOfSaleOutlined,
+    
 } from "@mui/icons-material";
 import { useLocation, useNavigate } from 'react-router-dom';
 import FlexBetween from './flexBetween';
 import profile from 'Assets/profile.jpg';
 
 const navItems = [
-    { text: "dashboard", icon: <HomeOutlined />, path: "user/dashboard" },
+    { text: "dashboard", icon: <HomeOutlined />, path: "/student/dashboard" },
     { text: "Student Section", icon: null },
-    { text: "Products", icon: <ShoppingCartOutlined />, path: "/user/products" },
-    { text: "Customers", icon: <Groups2Outlined />, path: "/user/customers" },
-    { text: "Transactions", icon: <ReceiptLongOutlined />, path: "/user/view_transactions" },
-    { text: "Geography", icon: <PublicOutlined />, path: "user/geography" },
-    { text: "Sales", icon: null },
-    { text: "Overview", icon: <PointOfSaleOutlined />, path: "/overview" },
-    { text: "Daily", icon: <TodayOutlined />, path: "/daily" },
-    { text: "Monthly", icon: <CalendarMonthOutlined />, path: "/monthly" },
-    { text: "Breakdown", icon: <PieChartOutlined />, path: "/breakdown" },
+    { text: "Profile", icon: <ShoppingCartOutlined />, path: "/student/profile" },
+    { text: "Timetable", icon: <Groups2Outlined />, path: "/student/timetable" },
+    { text: "Messages", icon: <ReceiptLongOutlined />, path: "/student/messages" },
+    { text: "Geography", icon: <PublicOutlined />, path: "student/geography" },
+    { text: "Courses", icon: null },
+    { text: "Assignments", icon: <PointOfSaleOutlined />, path: "/student/assignments" },
+    { text: "Attendance", icon: <TodayOutlined />, path: "/student/attendance" },
+    { text: "Grades", icon: <CalendarMonthOutlined />, path: "/student/grades" },
+    { text: "Results", icon: <CalendarMonthOutlined />, path: "/student/results" },
+    { text: "Extra-curricular activities", icon: <PieChartOutlined />, path: "/student/activities" },
     { text: "Management", icon: null },
-    { text: "Admin", icon: <AdminPanelSettingsOutlined />, path: "/admin" },
-    { text: "Performance", icon: <TrendingUpOutlined />, path: "/performance" },
+    { text: "Payments", icon: <AdminPanelSettingsOutlined />, path: "/student/payments" },
+    { text: "Library access", icon: <TrendingUpOutlined />, path: "/student/library" },
 ];
 
 const Sidebar = ({ user, drawerWidth, isSidebarOpen, setIsSidebarOpen, isNonMobile }) => {
@@ -73,8 +75,8 @@ const Sidebar = ({ user, drawerWidth, isSidebarOpen, setIsSidebarOpen, isNonMobi
                     sx={{
                         width: drawerWidth,
                         "& .MuiDrawer-paper": {
-                            color: theme.palette.secondary[200],
-                            backgroundColor: theme.palette.background.alt,
+                            color: theme.palette.mode === 'light' ? '#fff' : '#fff', // Adjust dark color as needed
+                            backgroundColor: theme.palette.mode === 'light' ? '#2c2848e6' : '#333', // Adjust dark color as needed
                             boxSizing: "border-box",
                             borderWidth: isNonMobile ? 0 : "2px",
                             width: drawerWidth
@@ -90,7 +92,7 @@ const Sidebar = ({ user, drawerWidth, isSidebarOpen, setIsSidebarOpen, isNonMobi
                                 <Box display="flex" alignItems="center" gap="0.5rem">
                                     <FlexBetween color={theme.palette.secondary.main}>
                                         <Box display="flex" alignItems="center" ml="2rem">
-                                            <Link href="/" sx={{ textDecoration: 'none', color: 'inherit' }}>
+                                            <Link href="/" sx={{ textDecoration: 'none', color: theme.palette.mode === 'light' ? '#befaeac4' : '#997d3d' }}>
                                                 <Typography variant="h4" fontWeight="bold">
                                                     Go_tech_School
                                                 </Typography>
@@ -115,33 +117,48 @@ const Sidebar = ({ user, drawerWidth, isSidebarOpen, setIsSidebarOpen, isNonMobi
                                     const lcText = text.toLowerCase();
 
                                     return (
-                                        <ListItem key={text} disablePadding>
-                                            <ListItemButton
-                                                onClick={() => {
-                                                    navigate(path);
-                                                    setActive(lcText);
-                                                }}
-                                                sx={{
-                                                    backgroundColor: active === lcText ? theme.palette.secondary[300] : "transparent",
-                                                    color: active === lcText
+                                    <ListItem key={text} disablePadding>
+                                        <ListItemButton
+                                            onClick={() => {
+                                                navigate(path);
+                                                setActive(lcText);
+                                            }}
+                                            sx={{
+                                                backgroundColor: active === lcText 
+                                                    ? theme.palette.secondary[300] 
+                                                    : "transparent",
+                                                color: theme.palette.mode === 'light' 
+                                                    ? '#fff' 
+                                                    : (active === lcText
                                                         ? theme.palette.primary[600]
-                                                        : theme.palette.secondary[100],
+                                                        : theme.palette.secondary[100]),
+                                                '&:hover': {
+                                                    backgroundColor: theme.palette.mode === 'light'
+                                                        ? '#24283fd1'  // Darker color on hover in light mode
+                                                        : '#03040659',  // Adjust for dark mode if needed
+                                                },
+                                            }}
+                                        >
+                                            <ListItemIcon
+                                                sx={{
+                                                    ml: "2rem",
+                                                    color: theme.palette.mode === 'light' 
+                                                        ? '#fff' 
+                                                        : (active === lcText 
+                                                            ? theme.palette.primary[600] 
+                                                            : theme.palette.secondary[200]),
                                                 }}
                                             >
-                                                <ListItemIcon
-                                                    sx={{
-                                                        ml: "2rem",
-                                                        color: active === lcText ? theme.palette.primary[600] : theme.palette.secondary[200],
-                                                    }}
-                                                >
-                                                    {icon}
-                                                </ListItemIcon>
-                                                <ListItemText primary={text} />
-                                                {active === lcText && (
-                                                    <ChevronRightOutlined sx={{ ml: "auto" }} />
-                                                )}
-                                            </ListItemButton>
-                                        </ListItem>
+                                                {icon}
+                                            </ListItemIcon>
+                                            <ListItemText primary={text} />
+                                            {active === lcText && (
+                                                <ChevronRightOutlined sx={{ ml: "auto" }} />
+                                            )}
+                                        </ListItemButton>
+                                    </ListItem>
+
+
                                     );
                                 })}
                             </List>
@@ -149,7 +166,7 @@ const Sidebar = ({ user, drawerWidth, isSidebarOpen, setIsSidebarOpen, isNonMobi
                     </Box>
 
                     {/* User image */}
-                    <Box position="absolute" bottom="-6rem" width='222px'>
+                    <Box position="absolute" bottom="-8rem" width='222px'>
                         <Divider />
                         <FlexBetween textTransform="none" gap="1rem" m="1rem 2rem 0 3rem">
                             <Box

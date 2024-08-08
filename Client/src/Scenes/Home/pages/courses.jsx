@@ -59,8 +59,14 @@ const Courses = () => {
             onClick={handleButtonClick}
             sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mt: 2 }}
             >
-            <Typography variant="body1">View All Courses</Typography>
-            <ArrowDropDown />
+            <Typography variant="body1" sx={{
+              color: '#000'
+            }}>View All Courses</Typography>
+            <ArrowDropDown 
+              sx={{
+                background: '#00000078'
+              }}
+            />
             </Button>
             {showSubjects && (
             <Box sx={{ mt: 2 }}>

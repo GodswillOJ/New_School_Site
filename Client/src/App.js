@@ -19,6 +19,18 @@ import Register from './Scenes/Auth/Register'; // Corrected import
 import UserVerify from './Scenes/Auth/verify/user_verify'; 
 import Layout from "./Scenes/Layouts/Layout/index"; // for admin
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
+import Profile from 'Scenes/Students/Dashboard/pages/profile';
+import Library from 'Scenes/Students/Dashboard/pages/library';
+import Attendance from 'Scenes/Students/Dashboard/pages/attendance';
+import Assignment from 'Scenes/Students/Dashboard/pages/assignment';
+import Courses_info from 'Scenes/Students/Dashboard/pages/courses';
+import Timetable from 'Scenes/Students/Dashboard/pages/timetable';
+import Grades from 'Scenes/Students/Dashboard/pages/grades';
+import Payment from 'Scenes/Students/Dashboard/pages/payment';
+import Messages from 'Scenes/Students/Dashboard/pages/messages';
+import Activities from 'Scenes/Students/Dashboard/pages/activities';
+import Geography from 'Scenes/Students/Dashboard/pages/geography';
+import Result from 'Scenes/Students/Dashboard/pages/result';
 import '../src/App.css'
 
 function App() {
@@ -52,6 +64,66 @@ function App() {
               <Route path='/student/dashboard' element={
                 <PrivateRoute>
                   <Dashboard />
+                </PrivateRoute>       
+              } />
+              <Route path='/student/profile' element={
+                <PrivateRoute>
+                  <Profile />
+                </PrivateRoute>       
+              } />
+              <Route path='/student/attendance' element={
+                <PrivateRoute>
+                  <Attendance />
+                </PrivateRoute>       
+              } />
+              <Route path='/student/courses' element={
+                <PrivateRoute>
+                  <Courses />
+                </PrivateRoute>       
+              } />
+              <Route path='/student/grades' element={
+                <PrivateRoute>
+                  <Grades />
+                </PrivateRoute>       
+              } />
+              <Route path='/student/results' element={
+                <PrivateRoute>
+                  <Result />
+                </PrivateRoute>       
+              } />
+              <Route path='/student/assignments' element={
+                <PrivateRoute>
+                  <Assignment />
+                </PrivateRoute>       
+              } />
+              <Route path='/student/library' element={
+                <PrivateRoute>
+                  <Library />
+                </PrivateRoute>       
+              } />
+              <Route path='/student/timetable' element={
+                <PrivateRoute>
+                  <Timetable />
+                </PrivateRoute>       
+              } />
+              <Route path='/student/activities' element={
+                <PrivateRoute>
+                  <Activities />
+                </PrivateRoute>       
+              } />
+              <Route path='/student/payments' element={
+                <PrivateRoute>
+                  <Payment />
+                </PrivateRoute>       
+              } />
+              <Route path='/student/messages' element={
+                <PrivateRoute>
+                  <Messages />
+                </PrivateRoute>       
+              } />
+              <Route path='/student/geography' element={
+                <PrivateRoute>
+                  <Geography />
                 </PrivateRoute>       
               } />
             </Route>
