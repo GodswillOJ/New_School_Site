@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { AppBar, Box, Typography, Link, IconButton, Menu, MenuItem, useMediaQuery } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { styled } from '@mui/system';
+import { useSelector, useDispatch } from 'react-redux';
+import { setLoginStatus } from 'state/index';
+import { useNavigate } from 'react-router-dom';
 
 const FlexBetweenBox = styled(Box)(({ theme }) => ({
   display: 'flex',
@@ -17,14 +20,29 @@ const NavLink = styled(Link)(({ theme }) => ({
 
 const Navbar = () => {
   const [anchorEl, setAnchorEl] = useState(null);
+  const [pagesAnchorEl, setPagesAnchorEl] = useState(null);
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down('sm'));
+  const { isLoggedIn } = useSelector((state) => state.global.user);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const handleMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
   };
 
+  const handlePagesMenuOpen = (event) => {
+    setPagesAnchorEl(event.currentTarget);
+  };
+
   const handleMenuClose = () => {
     setAnchorEl(null);
+    setPagesAnchorEl(null);
+  };
+
+  const handleLogout = () => {
+    localStorage.removeItem('access_token');
+    dispatch(setLoginStatus(false));
+    navigate('/login');
   };
 
   return (
@@ -89,11 +107,27 @@ const Navbar = () => {
                       Home
                     </NavLink>
                   </MenuItem>
-                  <MenuItem onClick={handleMenuClose}>
+                  <MenuItem onClick={handlePagesMenuOpen}>
                     <NavLink href="/pages" color="inherit">
                       Pages
                     </NavLink>
                   </MenuItem>
+                  <Menu
+                    anchorEl={pagesAnchorEl}
+                    open={Boolean(pagesAnchorEl)}
+                    onClose={handleMenuClose}
+                  >
+                    <MenuItem onClick={handleMenuClose}>
+                      <NavLink href={isLoggedIn ? "/student/dashboard" : "/login"} color="inherit">
+                        {isLoggedIn ? "Dashboard" : "Login"}
+                      </NavLink>
+                    </MenuItem>
+                    {isLoggedIn && (
+                      <MenuItem onClick={handleLogout}>
+                        Logout
+                      </MenuItem>
+                    )}
+                  </Menu>
                   <MenuItem onClick={handleMenuClose}>
                     <NavLink href="/courses" color="inherit">
                       Courses
@@ -116,9 +150,29 @@ const Navbar = () => {
                 <NavLink href="/" color='#c370c8 !important'>
                   Home
                 </NavLink>
-                <NavLink href="/pages">
+                <NavLink
+                  href="#"
+                  color="inherit"
+                  onClick={handlePagesMenuOpen}
+                >
                   Pages
                 </NavLink>
+                <Menu
+                  anchorEl={pagesAnchorEl}
+                  open={Boolean(pagesAnchorEl)}
+                  onClose={handleMenuClose}
+                >
+                  <MenuItem onClick={handleMenuClose}>
+                    <NavLink href={isLoggedIn ? "/student/dashboard" : "/login"} color="inherit">
+                      {isLoggedIn ? "Dashboard" : "Login"}
+                    </NavLink>
+                  </MenuItem>
+                  {isLoggedIn && (
+                    <MenuItem onClick={handleLogout}>
+                      Logout
+                    </MenuItem>
+                  )}
+                </Menu>
                 <NavLink href="/courses">
                   Courses
                 </NavLink>

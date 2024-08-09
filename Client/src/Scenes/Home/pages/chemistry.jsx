@@ -336,22 +336,245 @@ const Chemistry = () => {
 
         <div style={{ display: 'block', mt: 4, padding: '12px', width: 'auto' }}>
             <div>
-            {/* pagent */}
-            <Box sx={{ pb: '10px' }}>
+                {/* pagent */}
+                <Box sx={{ pb: '10px' }}>
+                    <Box sx={{ position: 'relative', width: '100%', height: '100%' }}>
+                    <Box
+                        component="img"
+                        alt="backgroundImg"
+                        src={pagent}
+                        width="100%"
+                        height="100%"
+                        sx={{ objectFit: 'cover' }}
+                        boxShadow="0 4px 12px rgba(0, 0, 0, 0.1)"
+                    />
+                    <NavLink
+                        to="/our_faces"
+                        style={{ textDecoration: 'none', color: '#fff' }}
+                    >
+                        <Box
+                        sx={{
+                            position: 'absolute',
+                            top: '50%',
+                            left: '50%',
+                            width: '150px',
+                            height: '100px',
+                            transform: 'translate(-50%, -50%)',
+                            backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                            boxShadow: '0 4px 12px rgba(255, 255, 255, 0.3)',
+                            padding: '10px',
+                            borderRadius: '5px',
+                            textAlign: 'center',
+                        }}
+                        >
+                        <Typography variant="h2">Faces</Typography>
+                        <Typography
+                            variant="body1"
+                            sx={{
+                            fontSize: '12px',
+                            }}
+                        >
+                            visit page
+                        </Typography>
+                        </Box>
+                    </NavLink>
+                    </Box>
+                </Box>
+
+                {/* tutors */}
+                <Box sx={{ pb: '10px' }}>
+                    <Box sx={{ position: 'relative', width: '100%', height: '100%' }}>
+                    <img
+                        src={tutors[0].image}
+                        alt={tutors[0].altImage}
+                        style={{
+                        width: '100%',
+                        height: '100%',
+                        boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
+                        }}
+                    />
+                    <NavLink
+                        to="/tutors"
+                        style={{ textDecoration: 'none', color: '#fff' }}
+                    >
+                        <Box
+                        sx={{
+                            position: 'absolute',
+                            top: '50%',
+                            left: '50%',
+                            width: '150px',
+                            height: '100px',
+                            transform: 'translate(-50%, -50%)',
+                            backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                            boxShadow: '0 4px 12px rgba(255, 255, 255, 0.3)',
+                            padding: '10px',
+                            borderRadius: '5px',
+                            textAlign: 'center',
+                        }}
+                        >
+                        <Typography variant="h2">Tutors</Typography>
+                        <Typography
+                            variant="body1"
+                            sx={{
+                            fontSize: '12px',
+                            }}
+                        >
+                            visit page
+                        </Typography>
+                        </Box>
+                    </NavLink>
+                    </Box>
+                </Box>
+
+                {/* road */}
+                <Box sx={{ pb: '10px' }}>
+                    <Box sx={{ position: 'relative', width: '100%', height: '100%' }}>
+                    <Box
+                        component="img"
+                        alt="backgroundImg"
+                        src={road}
+                        width="100%"
+                        height="100%"
+                        sx={{
+                        objectFit: 'cover',
+                        boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
+                        }}
+                    />
+                    <NavLink
+                        to="/events"
+                        style={{ textDecoration: 'none', color: '#fff' }}
+                    >
+                        <Box
+                        sx={{
+                            position: 'absolute',
+                            top: '50%',
+                            left: '50%',
+                            width: '150px',
+                            height: '100px',
+                            transform: 'translate(-50%, -50%)',
+                            boxShadow: '0 4px 12px rgba(255, 255, 255, 0.3)',
+                            backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                            padding: '10px',
+                            borderRadius: '5px',
+                            textAlign: 'center',
+                        }}
+                        >
+                        <Typography variant="h2">Road Trips</Typography>
+                        <Typography
+                            variant="body1"
+                            sx={{
+                            fontSize: '12px',
+                            }}
+                        >
+                            visit page
+                        </Typography>
+                        </Box>
+                    </NavLink>
+                    </Box>
+                </Box>
+
+                {/* excursion */}
+                <Box sx={{ pb: '10px' }}>
+                    <Box sx={{ position: 'relative', width: '100%', height: '100%' }}>
+                    <Box
+                        component="img"
+                        alt="backgroundImg"
+                        src={excursion}
+                        width="100%"
+                        height="100%"
+                        sx={{ objectFit: 'cover' }}
+                        boxShadow="0 4px 12px rgba(0, 0, 0, 0.1)"
+                    />
+                    <NavLink
+                        to="/excursions"
+                        style={{ textDecoration: 'none', color: '#fff' }}
+                    >
+                        <Box
+                        sx={{
+                            position: 'absolute',
+                            top: '50%',
+                            left: '50%',
+                            width: '150px',
+                            height: '100px',
+                            transform: 'translate(-50%, -50%)',
+                            backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                            boxShadow: '0 4px 12px rgba(255, 255, 255, 0.3)',
+                            padding: '10px',
+                            borderRadius: '5px',
+                            textAlign: 'center',
+                        }}
+                        >
+                        <Typography variant="h2">Projects</Typography>
+                        <Typography
+                            variant="body1"
+                            sx={{
+                            fontSize: '12px',
+                            }}
+                        >
+                            visit page
+                        </Typography>
+                        </Box>
+                    </NavLink>
+                    </Box>
+                </Box>
+
+                {/* chemistry */}
+                <Box sx={{ pb: '10px' }}>
+                    <Box sx={{ position: 'relative', width: '100%', height: '100%' }}>
+                    <Box
+                        component="img"
+                        alt="backgroundImg"
+                        src={chemistry}
+                        width="100%"
+                        height="100%"
+                        sx={{ objectFit: 'cover' }}
+                        boxShadow="0 4px 12px rgba(0, 0, 0, 0.1)"
+                    />
+                    <NavLink
+                        to="/chemistry_class"
+                        style={{ textDecoration: 'none', color: '#fff' }}
+                    >
+                        <Box
+                        sx={{
+                            position: 'absolute',
+                            top: '50%',
+                            left: '50%',
+                            width: '250px',
+                            height: '100px',
+                            transform: 'translate(-50%, -50%)',
+                            backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                            boxShadow: '0 4px 12px rgba(255, 255, 255, 0.3)',
+                            padding: '10px',
+                            borderRadius: '5px',
+                            textAlign: 'center',
+                        }}
+                        >
+                        <Typography variant="h2">Laboratory</Typography>
+                        <Typography
+                            variant="body1"
+                            sx={{
+                            fontSize: '12px',
+                            }}
+                        >
+                            visit page
+                        </Typography>
+                        </Box>
+                    </NavLink>
+                    </Box>
+                </Box>
+
+                            {/* school */}
+                <Box sx={{ pb:'10px' }}>
                 <Box sx={{ position: 'relative', width: '100%', height: '100%' }}>
                 <Box
-                    component="img"
-                    alt="backgroundImg"
-                    src={pagent}
-                    width="100%"
-                    height="100%"
-                    sx={{ objectFit: 'cover' }}
-                    boxShadow="0 4px 12px rgba(0, 0, 0, 0.1)"
-                />
-                <NavLink
-                    to="/our_faces"
-                    style={{ textDecoration: 'none', color: '#fff' }}
-                >
+                        component="img"
+                        alt="backgroundImg"
+                        src={school}
+                        width="100%"
+                        height='100%'
+                        sx={{ objectFit: 'cover', boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)', }}
+                    />
+                    <NavLink to="/school_facilities" style={{ textDecoration: 'none', color: '#fff' }}>
                     <Box
                     sx={{
                         position: 'absolute',
@@ -360,98 +583,6 @@ const Chemistry = () => {
                         width: '150px',
                         height: '100px',
                         transform: 'translate(-50%, -50%)',
-                        backgroundColor: 'rgba(0, 0, 0, 0.5)',
-                        boxShadow: '0 4px 12px rgba(255, 255, 255, 0.3)',
-                        padding: '10px',
-                        borderRadius: '5px',
-                        textAlign: 'center',
-                    }}
-                    >
-                    <Typography variant="h2">Faces</Typography>
-                    <Typography
-                        variant="body1"
-                        sx={{
-                        fontSize: '12px',
-                        }}
-                    >
-                        visit page
-                    </Typography>
-                    </Box>
-                </NavLink>
-                </Box>
-            </Box>
-
-            {/* tutors */}
-            <Box sx={{ pb: '10px' }}>
-                <Box sx={{ position: 'relative', width: '100%', height: '100%' }}>
-                <img
-                    src={tutors[0].image}
-                    alt={tutors[0].altImage}
-                    style={{
-                    width: '100%',
-                    height: '100%',
-                    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
-                    }}
-                />
-                <NavLink
-                    to="/tutors"
-                    style={{ textDecoration: 'none', color: '#fff' }}
-                >
-                    <Box
-                    sx={{
-                        position: 'absolute',
-                        top: '50%',
-                        left: '50%',
-                        width: '150px',
-                        height: '100px',
-                        transform: 'translate(-50%, -50%)',
-                        backgroundColor: 'rgba(0, 0, 0, 0.5)',
-                        boxShadow: '0 4px 12px rgba(255, 255, 255, 0.3)',
-                        padding: '10px',
-                        borderRadius: '5px',
-                        textAlign: 'center',
-                    }}
-                    >
-                    <Typography variant="h2">Tutors</Typography>
-                    <Typography
-                        variant="body1"
-                        sx={{
-                        fontSize: '12px',
-                        }}
-                    >
-                        visit page
-                    </Typography>
-                    </Box>
-                </NavLink>
-                </Box>
-            </Box>
-
-            {/* road */}
-            <Box sx={{ pb: '10px' }}>
-                <Box sx={{ position: 'relative', width: '100%', height: '100%' }}>
-                <Box
-                    component="img"
-                    alt="backgroundImg"
-                    src={road}
-                    width="100%"
-                    height="100%"
-                    sx={{
-                    objectFit: 'cover',
-                    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
-                    }}
-                />
-                <NavLink
-                    to="/events"
-                    style={{ textDecoration: 'none', color: '#fff' }}
-                >
-                    <Box
-                    sx={{
-                        position: 'absolute',
-                        top: '50%',
-                        left: '50%',
-                        width: '150px',
-                        height: '100px',
-                        transform: 'translate(-50%, -50%)',
                         boxShadow: '0 4px 12px rgba(255, 255, 255, 0.3)',
                         backgroundColor: 'rgba(0, 0, 0, 0.5)',
                         padding: '10px',
@@ -459,145 +590,14 @@ const Chemistry = () => {
                         textAlign: 'center',
                     }}
                     >
-                    <Typography variant="h2">Road Trips</Typography>
-                    <Typography
-                        variant="body1"
-                        sx={{
-                        fontSize: '12px',
-                        }}
-                    >
-                        visit page
-                    </Typography>
+                        <Typography variant='h2'>School</Typography>
+                        <Typography variant='body1' sx={{
+                            fontSize:'12px'
+                        }}>visit page</Typography>
                     </Box>
-                </NavLink>
+                    </NavLink>
                 </Box>
-            </Box>
-
-            {/* excursion */}
-            <Box sx={{ pb: '10px' }}>
-                <Box sx={{ position: 'relative', width: '100%', height: '100%' }}>
-                <Box
-                    component="img"
-                    alt="backgroundImg"
-                    src={excursion}
-                    width="100%"
-                    height="100%"
-                    sx={{ objectFit: 'cover' }}
-                    boxShadow="0 4px 12px rgba(0, 0, 0, 0.1)"
-                />
-                <NavLink
-                    to="/excursions"
-                    style={{ textDecoration: 'none', color: '#fff' }}
-                >
-                    <Box
-                    sx={{
-                        position: 'absolute',
-                        top: '50%',
-                        left: '50%',
-                        width: '150px',
-                        height: '100px',
-                        transform: 'translate(-50%, -50%)',
-                        backgroundColor: 'rgba(0, 0, 0, 0.5)',
-                        boxShadow: '0 4px 12px rgba(255, 255, 255, 0.3)',
-                        padding: '10px',
-                        borderRadius: '5px',
-                        textAlign: 'center',
-                    }}
-                    >
-                    <Typography variant="h2">Projects</Typography>
-                    <Typography
-                        variant="body1"
-                        sx={{
-                        fontSize: '12px',
-                        }}
-                    >
-                        visit page
-                    </Typography>
-                    </Box>
-                </NavLink>
                 </Box>
-            </Box>
-
-            {/* chemistry */}
-            <Box sx={{ pb: '10px' }}>
-                <Box sx={{ position: 'relative', width: '100%', height: '100%' }}>
-                <Box
-                    component="img"
-                    alt="backgroundImg"
-                    src={chemistry}
-                    width="100%"
-                    height="100%"
-                    sx={{ objectFit: 'cover' }}
-                    boxShadow="0 4px 12px rgba(0, 0, 0, 0.1)"
-                />
-                <NavLink
-                    to="/chemistry_class"
-                    style={{ textDecoration: 'none', color: '#fff' }}
-                >
-                    <Box
-                    sx={{
-                        position: 'absolute',
-                        top: '50%',
-                        left: '50%',
-                        width: '250px',
-                        height: '100px',
-                        transform: 'translate(-50%, -50%)',
-                        backgroundColor: 'rgba(0, 0, 0, 0.5)',
-                        boxShadow: '0 4px 12px rgba(255, 255, 255, 0.3)',
-                        padding: '10px',
-                        borderRadius: '5px',
-                        textAlign: 'center',
-                    }}
-                    >
-                    <Typography variant="h2">Laboratory</Typography>
-                    <Typography
-                        variant="body1"
-                        sx={{
-                        fontSize: '12px',
-                        }}
-                    >
-                        visit page
-                    </Typography>
-                    </Box>
-                </NavLink>
-                </Box>
-            </Box>
-
-                        {/* school */}
-            <Box sx={{ pb:'10px' }}>
-            <Box sx={{ position: 'relative', width: '100%', height: '100%' }}>
-            <Box
-                    component="img"
-                    alt="backgroundImg"
-                    src={school}
-                    width="100%"
-                    height='100%'
-                    sx={{ objectFit: 'cover', boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)', }}
-                />
-                <NavLink to="/school_facilities" style={{ textDecoration: 'none', color: '#fff' }}>
-                <Box
-                sx={{
-                    position: 'absolute',
-                    top: '50%',
-                    left: '50%',
-                    width: '150px',
-                    height: '100px',
-                    transform: 'translate(-50%, -50%)',
-                    boxShadow: '0 4px 12px rgba(255, 255, 255, 0.3)',
-                    backgroundColor: 'rgba(0, 0, 0, 0.5)',
-                    padding: '10px',
-                    borderRadius: '5px',
-                    textAlign: 'center',
-                }}
-                >
-                    <Typography variant='h2'>School</Typography>
-                    <Typography variant='body1' sx={{
-                        fontSize:'12px'
-                    }}>visit page</Typography>
-                </Box>
-                </NavLink>
-            </Box>
-            </Box>
             </div>
         </div>
       </Box>
