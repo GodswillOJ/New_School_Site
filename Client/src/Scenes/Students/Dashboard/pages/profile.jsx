@@ -11,19 +11,19 @@ import school from 'Assets/school_gal.jpg';
 import profile from 'Assets/profile.jpg';
 import Footer from 'Components/Footer';
 
+const tutors = [
+  { image: t2, link: '/tutor1' },
+  { image: pagent, link: '/tutor2' },
+  { image: road, link: '/tutor3' },
+  { image: courses, link: '/tutor4' },
+  { image: excursion, link: '/tutor5' },
+  { image: chemistry, link: '/tutor6' },
+];
+
+
 const Profile = () => {
   const theme = useTheme();
   const isSmallScreen = useMediaQuery('(max-width:1030px)');
-
-  const tutors = [
-    { image: t2, link: '/tutor1' },
-    { image: pagent, link: '/tutor2' },
-    { image: road, link: '/tutor3' },
-    { image: courses, link: '/tutor4' },
-    { image: excursion, link: '/tutor5' },
-    { image: chemistry, link: '/tutor6' },
-  ];
-
 
   return (
     <div style={{ display: 'block' }}>
