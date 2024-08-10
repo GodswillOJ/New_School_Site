@@ -79,7 +79,7 @@ const Navbar = ({ user, isSidebarOpen, setIsSidebarOpen }) => {
         boxShadow: "none",
       }}
     >
-      <Toolbar sx={{ justifyContent: "space-between", display: 'block' }}>
+      <Toolbar sx={{ justifyContent: "space-between", display: 'block', pb: '2%', boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.1)' }}>
         <Box sx={{ display:'flex', justifyContent: "space-between" }}>
           {/* Left Side */}
           <FlexBetween>

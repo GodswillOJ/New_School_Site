@@ -1,6 +1,7 @@
-import React from 'react';
-import { Box, Typography, useTheme, useMediaQuery } from '@mui/material';
+import React, {useState } from 'react';
+import { Box, Typography, useTheme, Menu, Dialog, Button, DialogActions, DialogContent, MenuItem, IconButton, useMediaQuery } from '@mui/material';
 import { NavLink } from 'react-router-dom';
+import PhotoCamera from '@mui/icons-material/PhotoCamera';
 import pagent from 'Assets/pagent.jpg';
 import road from 'Assets/road.jpg';
 import courses from 'Assets/courses_.jpg';
@@ -24,6 +25,29 @@ const tutors = [
 const Profile = () => {
   const theme = useTheme();
   const isSmallScreen = useMediaQuery('(max-width:1030px)');
+  const isSmallSize = useMediaQuery('(max-width:500px)');
+
+    // State for menu and dialog
+  const [anchorEl, setAnchorEl] = useState(null);
+  const [isDialogOpen, setDialogOpen] = useState(false);
+
+  const handleMenuOpen = (event) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleMenuClose = () => {
+    setAnchorEl(null);
+  };
+
+  const handleViewImage = () => {
+    setDialogOpen(true);
+    handleMenuClose();
+  };
+
+  const handleDialogClose = () => {
+    setDialogOpen(false);
+  };
+
 
   return (
     <div style={{ display: 'block' }}>
@@ -40,9 +64,11 @@ const Profile = () => {
             display: 'flex',
             mt: '20px',
             flexDirection: 'column',
+            margin:'2%',
             border: `1px solid ${theme.palette.divider}`,
             padding: theme.spacing(2),
             borderRadius: theme.shape.borderRadius,
+            boxShadow: theme.palette.mode === 'light' ? '0 4px 12px rgba(0, 0, 0, 0.1)' : '0 4px 12px rgba(255, 255, 255, 0.3)',
           }}
         >
           {/* First Sub Container */}
@@ -51,46 +77,71 @@ const Profile = () => {
             <Box
               sx={{
                 width: '100%',
-                height: 100,
+                height: 125,
                 backgroundImage: `url(${school})`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
+                boxShadow: theme.palette.mode === 'light' ? '0 4px 12px rgba(0, 0, 0, 0.1)' : '0 4px 12px rgba(255, 255, 255, 0.3)',
+                borderRadius: '10px 10px 0 0',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
                 position: 'relative', // Important for overlaying the profile image
               }}
             >
+              
               {/* First Child Container (Profile Image) moved inside the Second Child Container */}
               <Box
                 sx={{
-                  width: '20%',
-                  height: 100,
+                  width: isSmallSize ? '22%' : '20%',
+                  height: isSmallSize ? 100 : 125,
                   borderRadius: '50%',
-                  backgroundColor: theme.palette.grey[200],
+                  backgroundColor: theme.palette.mode === 'light' ? '#fff' : theme.palette.background.alt,
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
                   position: 'absolute', // Overlay position
-                  top: '50%',
+                  top: '70%',
                   left: '10%', // Adjust based on your design
                   transform: 'translateY(-50%)', // Center vertically
                 }}
               >
+                              {/* PhotoIcon at the bottom */}
+              <IconButton
+                sx={{ position: 'absolute', bottom: '8px', left: isSmallScreen ? '4rem' : '8rem', zIndex: 100 }}
+                onClick={handleMenuOpen}
+              >
+                <PhotoCamera
+                  sx={{
+                    fontSize: '40px'
+                  }}
+                />
+              </IconButton>
+
+              {/* Menu for PhotoIcon */}
+              <Menu
+                anchorEl={anchorEl}
+                open={Boolean(anchorEl)}
+                onClose={handleMenuClose}
+              >
+                <MenuItem onClick={handleViewImage}>View Image</MenuItem>
+                <MenuItem>Edit Image</MenuItem>
+              </Menu>
                 <img
                   src={profile}
                   alt="Profile"
                   style={{
-                    width: '100%',
-                    height: '100%',
+                    width: '90%',
+                    height: '90%',
                     borderRadius: '50%',
+                    boxShadow: theme.palette.mode === 'light' ? '0 4px 12px rgba(0, 0, 0, 0.1)' : '0 4px 12px rgba(255, 255, 255, 0.3)',
                     objectFit: 'cover',
                   }}
                   onError={(e) => (e.target.src = 'path/to/alternate_image.jpg')}
                 />
               </Box>
 
-              <Typography variant="body1" sx={{ fontStyle: 'italic', ml: 2 }}>
+              <Typography variant="body1" sx={{ fontStyle: 'italic', fontSize:'26px', ml: 2, pl: '6rem', fontWeight: 'bold', color: '#210a40db', textShadow: '2px 2px 4px rgba(255, 255, 255, 0.7)', }}>
                 GO_TECH_SCHOOL
               </Typography>
             </Box>
@@ -116,6 +167,54 @@ const Profile = () => {
             </Box>
           </Box>
         </Box>
+
+        <Dialog open={isDialogOpen} onClose={handleDialogClose} maxWidth="sm"
+          PaperProps={{
+            sx: {
+              width: '100%',
+              maxWidth: '500px',
+              margin: 'auto',
+              borderRadius: '10px'
+            }
+          }}
+        >
+          <DialogContent sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 0 }}>
+            {/* Outer Box Container */}
+            <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', width: '100%', height: '100%' }}>
+              {/* Inner Box Container with Image */}
+              <Box
+                sx={{
+                  width: 300, // Adjust width and height as needed
+                  height: 300,
+                  borderRadius: '50%',
+                  overflow: 'hidden', // Ensures the image is clipped to the rounded border
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                }}
+              >
+                <img
+                  src={profile}
+                  alt="School"
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                  }}
+                />
+              </Box>
+            </Box>
+          </DialogContent>
+          <DialogActions>
+            <Button onClick={handleDialogClose} color="primary">
+              Close
+            </Button>
+            <Button onClick={() => console.log('Save Image Logic')} color="primary">
+              Save Image
+            </Button>
+          </DialogActions>
+        </Dialog>
+
 
         {/* Others section */}
         <div style={{ display: 'block', mt: 4, padding: '12px', width: 'auto' }}>
