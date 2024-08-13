@@ -92,8 +92,8 @@ const Sidebar = ({ user, drawerWidth, isSidebarOpen, setIsSidebarOpen, isNonMobi
                                 <Box display="flex" alignItems="center" gap="0.5rem">
                                     <FlexBetween color={theme.palette.secondary.main}>
                                         <Box display="flex" alignItems="center" ml="2rem">
-                                            <Link href="/" sx={{ textDecoration: 'none', textShadow: '2px 2px 4px rgba(0, 0, 0, 0.7)', color: theme.palette.mode === 'light' ? '#befaeac4' : '#997d3d' }}>
-                                                <Typography variant="h4" fontWeight="bold">
+                                            <Link href="/" sx={{ textDecoration: 'none', textShadow: '2px 2px 4px rgba(0, 0, 0, 0.7)', color: theme.palette.mode === 'light' ? '#fff' : '#997d3d' }}>
+                                                <Typography variant="h4" fontWeight="bold" sx={{}}>
                                                     Go_tech_School
                                                 </Typography>
                                             </Link>

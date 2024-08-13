@@ -141,7 +141,7 @@ const Profile = () => {
                 />
               </Box>
 
-              <Typography variant="body1" sx={{ fontStyle: 'italic', fontSize:'26px', ml: 2, pl: '6rem', fontWeight: 'bold', color: '#210a40db', textShadow: '2px 2px 4px rgba(255, 255, 255, 0.7)', }}>
+              <Typography variant="body1" sx={{ fontStyle: 'italic', fontSize: isSmallScreen ? '18px' : '26px', ml: 2, pl: '6rem', fontWeight: 'bold', color: '#210a40db', textShadow: '2px 2px 4px rgba(255, 255, 255, 0.7)', }}>
                 GO_TECH_SCHOOL
               </Typography>
             </Box>
