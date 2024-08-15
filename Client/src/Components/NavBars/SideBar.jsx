@@ -76,7 +76,7 @@ const Sidebar = ({ user, drawerWidth, isSidebarOpen, setIsSidebarOpen, isNonMobi
                         width: drawerWidth,
                         "& .MuiDrawer-paper": {
                             color: theme.palette.mode === 'light' ? '#fff' : '#fff', // Adjust dark color as needed
-                            backgroundColor: theme.palette.mode === 'light' ? '#2c2848e6' : '#333', // Adjust dark color as needed
+                            backgroundColor: theme.palette.mode === 'light' ? '#181434e6' : '#333', // Adjust dark color as needed
                             boxSizing: "border-box",
                             borderWidth: isNonMobile ? 0 : "2px",
                             width: drawerWidth
@@ -92,14 +92,27 @@ const Sidebar = ({ user, drawerWidth, isSidebarOpen, setIsSidebarOpen, isNonMobi
                                 <Box display="flex" alignItems="center" gap="0.5rem">
                                     <FlexBetween color={theme.palette.secondary.main}>
                                         <Box display="flex" alignItems="center" ml="2rem">
-                                            <Link href="/" sx={{ textDecoration: 'none', textShadow: '2px 2px 4px rgba(0, 0, 0, 0.7)', color: theme.palette.mode === 'light' ? '#fff' : '#997d3d' }}>
-                                                <Typography variant="h4" fontWeight="bold" sx={{}}>
+                                            <Link href="/" sx={{ 
+                                                textDecoration: 'none', 
+                                                textShadow: '0 4px 12px rgba(255, 255, 255, 0.3)', 
+                                                color: theme.palette.mode === 'light' ? '#c28608' : '#997d3d',
+                                                }}>
+                                                <Typography variant="h4" fontWeight="bold" sx={{
+                                                    fontFamily: "Pacifico cursive",
+                                                    fontWeight: 400,
+                                                    fontStyle: 'italic',
+                                                }}>
                                                     Go_tech_School
                                                 </Typography>
                                             </Link>
                                         </Box>
                                         <IconButton onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
-                                            <ChevronLeft />
+                                            <ChevronLeft 
+                                                sx={{
+                                                    color: theme.palette.mode === 'light' ? '#b8aa7d' : '#997d3d',
+                                                    textShadow: '0 4px 12px rgba(255, 255, 255, 0.3)',
+                                                }}
+                                            />
                                         </IconButton>
                                     </FlexBetween>
                                 </Box>
@@ -134,7 +147,7 @@ const Sidebar = ({ user, drawerWidth, isSidebarOpen, setIsSidebarOpen, isNonMobi
                                                         : theme.palette.secondary[100]),
                                                 '&:hover': {
                                                     backgroundColor: theme.palette.mode === 'light'
-                                                        ? '#24283fd1'  // Darker color on hover in light mode
+                                                        ? '#070d2cd1'  // Darker color on hover in light mode
                                                         : '#03040659',  // Adjust for dark mode if needed
                                                 },
                                             }}
@@ -190,6 +203,9 @@ const Sidebar = ({ user, drawerWidth, isSidebarOpen, setIsSidebarOpen, isNonMobi
                             <SettingsOutlined sx={{ color: theme.palette.secondary[300] }} fontSize="25px" />
                         </FlexBetween>
                     </Box>
+                    <style>
+                        @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Pacifico&display=swap');
+                    </style>
                 </Drawer>
             )}
         </Box>

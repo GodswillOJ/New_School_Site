@@ -338,14 +338,19 @@ const subjects = [
 const Timetable = () => {
   const [selectedClass, setSelectedClass] = useState('');
   const isSmallScreen = useMediaQuery('(max-width:1030px)');
+  const isSmallSize = useMediaQuery('(max-width:500px)');
 
   const handleClassChange = (event) => {
     setSelectedClass(event.target.value);
   };
 
   return (
-    <div style={{ display: 'block' }}>
-      <Box sx={{ position: 'relative', display: 'grid', gridTemplateColumns: isSmallScreen ? '1fr' : '3fr 1fr' }}>
+    <div style={{ display: 'block', overflowX: 'hidden' }}>
+      <Box sx={{ 
+        position: 'relative', 
+        display: 'grid', 
+        gridTemplateColumns: isSmallScreen ? '1fr' : '3fr 1fr'
+         }}>
         <Box sx={{ padding: 2, display: 'block' }}>
           {/* First Sub-Container */}
           <Box sx={{ marginBottom: 2 }}>
@@ -373,15 +378,35 @@ const Timetable = () => {
               </Select>
 
               {selectedClass && (
-                <Box sx={{ overflow: 'auto', maxHeight: 400 }}>
+                <Box sx={{ overflow: 'auto', width: '100%', maxHeight: 400 }}>
                   <Table stickyHeader>
                     <TableHead>
                       <TableRow>
-                        <TableCell>Monday</TableCell>
-                        <TableCell>Tuesday</TableCell>
-                        <TableCell>Wednesday</TableCell>
-                        <TableCell>Thursday</TableCell>
-                        <TableCell>Friday</TableCell>
+                        <TableCell
+                          sx={{
+                            fontSize: isSmallSize ? '8px' : '18px'
+                          }}                        
+                        >Monday</TableCell>
+                        <TableCell
+                          sx={{
+                            fontSize: isSmallSize ? '8px' : '18px'
+                          }}                        
+                        >Tuesday</TableCell>
+                        <TableCell
+                          sx={{
+                            fontSize: isSmallSize ? '8px' : '18px'
+                          }}                        
+                        >Wednesday</TableCell>
+                        <TableCell
+                          sx={{
+                            fontSize: isSmallSize ? '8px' : '18px'
+                          }}                        
+                        >Thursday</TableCell>
+                        <TableCell
+                          sx={{
+                            fontSize: isSmallSize ? '8px' : '18px'
+                          }}                        
+                        >Friday</TableCell>
                       </TableRow>
                     </TableHead>
                     <TableBody>
@@ -389,9 +414,13 @@ const Timetable = () => {
                         {['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'].map((day) => (
                           <TableCell key={day}>
                             {timetableData[selectedClass].timetable[day].slice(0, 7).map((entry, index) => (
-                              <Box key={index} sx={{ borderBottom: '1px solid #ccc', padding: '8px 0' }}>
-                                <Typography variant="body1">{entry.subject}</Typography>
-                                <Typography variant="caption">{entry.period}</Typography>
+                              <Box key={index} sx={{ borderBottom: '1px solid #ccc', padding: '8px 0',}}>
+                                <Typography sx={{
+                                  fontSize: isSmallSize ? '6px' : '18px'
+                                }} variant="body1">{entry.subject}</Typography>
+                                <Typography sx={{
+                                  fontSize: isSmallSize ? '6px' : '18px'
+                                }} variant="caption">{entry.period}</Typography>
                               </Box>
                             ))}
                           </TableCell>
@@ -406,7 +435,7 @@ const Timetable = () => {
             {/* Registered Courses List */}
             <Box sx={{ flexGrow: 1 }}>
               <Typography variant="h6">Registered Courses</Typography>
-              <List sx={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr' }}>
+              <List sx={{ display: 'grid', gridTemplateColumns: '1fr 1fr' }}>
                 {subjects.map((subject, index) => (
                   <ListItem key={index}>
                     <Checkbox checked />

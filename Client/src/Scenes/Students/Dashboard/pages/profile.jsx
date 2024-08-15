@@ -26,6 +26,7 @@ const Profile = () => {
   const theme = useTheme();
   const isSmallScreen = useMediaQuery('(max-width:1030px)');
   const isSmallSize = useMediaQuery('(max-width:500px)');
+  const isVerySmall = useMediaQuery('(max-width:350px)');
 
     // State for menu and dialog
   const [anchorEl, setAnchorEl] = useState(null);
@@ -113,7 +114,7 @@ const Profile = () => {
               >
                 <PhotoCamera
                   sx={{
-                    fontSize: '40px'
+                    fontSize: '40px',
                   }}
                 />
               </IconButton>
@@ -141,7 +142,16 @@ const Profile = () => {
                 />
               </Box>
 
-              <Typography variant="body1" sx={{ fontStyle: 'italic', fontSize: isSmallScreen ? '18px' : '26px', ml: 2, pl: '6rem', fontWeight: 'bold', color: '#210a40db', textShadow: '2px 2px 4px rgba(255, 255, 255, 0.7)', }}>
+              <Typography variant="body1" sx={{ 
+                fontStyle: 'italic', 
+                fontSize: isSmallScreen ? '18px' : '26px', 
+                ml: 2, 
+                pl: '6rem',
+                fontWeight: 'bold', 
+                color: '#3710b0db', 
+                textShadow: '2px 2px 4px rgba(255, 255, 255, 0.7)',
+                // borderColor: '1px solid #fff'
+                }}>
                 GO_TECH_SCHOOL
               </Typography>
             </Box>

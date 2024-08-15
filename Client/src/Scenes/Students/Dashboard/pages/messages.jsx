@@ -118,7 +118,7 @@ const Message = () => {
           sx={{ zIndex: 0, width: isSmallScreen ? '100%' : '100%' }} // Adjust width based on screen size
         >
           <Box mb={3}>
-            <Typography variant={isSmallScreen ? 'h4' : 'h4'} fontWeight="bold">
+            <Typography variant={isSmallScreen ? 'body1' : 'body1'} fontWeight="bold">
               gotech_school/student/messages
             </Typography>
             <Typography variant={isSmallScreen ? 'body2' : 'body1'}>
@@ -166,6 +166,7 @@ const Message = () => {
                     gap: 1,
                     justifyContent: 'space-between',
                     ml: '10px',
+                    fontSize: isSmallScreen ? '8px' : '16px',
                   }}
                 />
               </MenuItem>
