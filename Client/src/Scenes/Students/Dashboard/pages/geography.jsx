@@ -1,10 +1,12 @@
 import React from 'react';
-import {Box, Typography, useTheme} from '@mui/material';
+import {Box, Typography, useTheme, useMediaQuery} from '@mui/material';
 import Map from 'Components/Maps'; // Make sure the path to your Map component is correct
 import Footer from 'Components/Footer';
 
 
 const Geography = () => {
+  const isSmallSize = useMediaQuery('(max-width:500px)');
+  const isVerySmall = useMediaQuery('(max-width:350px)');
   const theme = useTheme()
 
   return (
@@ -22,7 +24,7 @@ const Geography = () => {
           <Typography
             variant='body1'
             sx={{
-              fontSize:'18px',
+              fontSize: isSmallSize ? '10px' : '16px',
               fontFamily: 'sans-serif',
               fontStyle: 'italic',
               fontWeight: 'bold',
@@ -39,7 +41,7 @@ const Geography = () => {
         <Box
           sx={{
             width: '100%',
-            height: '500px',
+            height: isSmallSize ? '400px' : '500px',
             border: '1px solid #ccc',
             borderRadius: '8px',
             overflow: 'hidden',

@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { AppBar, Box, Typography, Link, IconButton, Menu, MenuItem, useMediaQuery } from '@mui/material';
+import { AppBar, Box, Typography, Link, IconButton, Menu, useTheme, MenuItem, useMediaQuery } from '@mui/material';
+import { LightModeOutlined, DarkModeOutlined } from '@mui/icons-material'
 import MenuIcon from '@mui/icons-material/Menu';
 import { styled } from '@mui/system';
 import { useSelector, useDispatch } from 'react-redux';
-import { setLoginStatus } from 'state/index';
+import { setMode, setLoginStatus } from 'state/index';
 import { useNavigate } from 'react-router-dom';
 
 const FlexBetweenBox = styled(Box)(({ theme }) => ({
@@ -19,12 +20,13 @@ const NavLink = styled(Link)(({ theme }) => ({
 }));
 
 const Navbar = () => {
-  const [anchorEl, setAnchorEl] = useState(null);
   const [pagesAnchorEl, setPagesAnchorEl] = useState(null);
   const isMobile = useMediaQuery((theme) => theme.breakpoints.down('sm'));
   const { isLoggedIn } = useSelector((state) => state.global.user);
+  const [anchorEl, setAnchorEl] = useState(null);
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const theme = useTheme()
 
   const handleMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
@@ -112,6 +114,7 @@ const Navbar = () => {
                       Pages
                     </NavLink>
                   </MenuItem>
+
                   <Menu
                     anchorEl={pagesAnchorEl}
                     open={Boolean(pagesAnchorEl)}
@@ -121,6 +124,15 @@ const Navbar = () => {
                       <NavLink href={isLoggedIn ? "/student/dashboard" : "/login"} color="inherit">
                         {isLoggedIn ? "Dashboard" : "Login"}
                       </NavLink>
+                    </MenuItem>
+                    <MenuItem key="settings" onClick={handleMenuClose}>
+                      <IconButton onClick={() => dispatch(setMode())}>
+                        {theme.palette.mode === "dark" ? (
+                          <DarkModeOutlined sx={{ fontSize: "25px" }} />
+                        ) : (
+                          <LightModeOutlined sx={{ fontSize: "25px" }} />
+                        )}
+                      </IconButton>
                     </MenuItem>
                     {isLoggedIn && (
                       <MenuItem onClick={handleLogout}>

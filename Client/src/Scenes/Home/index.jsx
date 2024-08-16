@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Box, Typography, useMediaQuery, IconButton, Link } from '@mui/material';
+import { Box, Typography, useMediaQuery, IconButton, Link, useTheme } from '@mui/material';
 import SchoolIcon from '@mui/icons-material/School';
 import { Facebook, Twitter, Instagram, LinkedIn } from '@mui/icons-material';
 import { NavLink } from 'react-router-dom';
@@ -7,6 +7,7 @@ import YouTube from 'react-youtube';
 import teacher1 from 'Assets/Teacher_1.jpg';
 import student1 from 'Assets/18644.jpg';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import Map from 'Components/Maps';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
@@ -26,6 +27,7 @@ const Home = () => {
   const isBelow650px = useMediaQuery('(max-width:650px)');
   const [displayContent, setDisplayContent] = useState(true);
   const [isVisible, setIsVisible] = useState(true);
+  const theme = useTheme()
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -425,6 +427,32 @@ const Home = () => {
           <YouTube videoId={videoId} opts={videoOptions} />
       </Box>
       
+      <Box>
+        <Typography
+          sx={{
+            textAlign: 'center',
+            fontSize: '30px',
+            fontWeight: 'bold',
+            p: '10px',
+            fontFamily:'PT Serif, serif'
+          }}
+        >Our Location</Typography>
+        <Box
+            sx={{
+              width: '100%',
+              height: '300px',
+              border: '1px solid #ccc',
+              borderRadius: '8px',
+              overflow: 'hidden',
+              mb: '20px',
+              p: '20px',
+              boxShadow: theme.palette.mode === 'light' ? '0 4px 12px rgba(0, 0, 0, 0.1)' : '0 4px 12px rgba(255, 255, 255, 0.3)',
+            }}
+          >
+            <Map />
+          </Box>
+      </Box>
+
       <Footer/>
       </div>
   );

@@ -18,17 +18,17 @@ import {
     ChevronRightOutlined,
     ChevronLeft,
     HomeOutlined,
-    ShoppingCartOutlined,
-    Groups2Outlined,
-    ReceiptLongOutlined,
+    Email,
+    Assignment,
     PublicOutlined,
     TodayOutlined,
     CalendarMonthOutlined,
-    AdminPanelSettingsOutlined,
     TrendingUpOutlined,
     PieChartOutlined,
-    PointOfSaleOutlined,
-    
+    AccountCircle,
+    EventNote,
+    CreditScore,
+    AccountBalance,
 } from "@mui/icons-material";
 import { useLocation, useNavigate } from 'react-router-dom';
 import FlexBetween from './flexBetween';
@@ -37,18 +37,18 @@ import profile from 'Assets/profile.jpg';
 const navItems = [
     { text: "dashboard", icon: <HomeOutlined />, path: "/student/dashboard" },
     { text: "Student Section", icon: null },
-    { text: "Profile", icon: <ShoppingCartOutlined />, path: "/student/profile" },
-    { text: "Timetable", icon: <Groups2Outlined />, path: "/student/timetable" },
-    { text: "Messages", icon: <ReceiptLongOutlined />, path: "/student/messages" },
+    { text: "Profile", icon: <AccountCircle />, path: "/student/profile" },
+    { text: "Timetable", icon: <EventNote />, path: "/student/timetable" },
+    { text: "Messages", icon: <Email />, path: "/student/messages" },
     { text: "Geography", icon: <PublicOutlined />, path: "student/geography" },
     { text: "Courses", icon: null },
-    { text: "Assignments", icon: <PointOfSaleOutlined />, path: "/student/assignments" },
+    { text: "Assignments", icon: <Assignment />, path: "/student/assignments" },
     { text: "Attendance", icon: <TodayOutlined />, path: "/student/attendance" },
-    { text: "Grades", icon: <CalendarMonthOutlined />, path: "/student/grades" },
+    { text: "Grades", icon: <CreditScore />, path: "/student/grades" },
     { text: "Results", icon: <CalendarMonthOutlined />, path: "/student/results" },
     { text: "Extra-curricular activities", icon: <PieChartOutlined />, path: "/student/activities" },
     { text: "Management", icon: null },
-    { text: "Payments", icon: <AdminPanelSettingsOutlined />, path: "/student/payments" },
+    { text: "Payments", icon: <AccountBalance />, path: "/student/payments" },
     { text: "Library access", icon: <TrendingUpOutlined />, path: "/student/library" },
 ];
 
@@ -94,13 +94,13 @@ const Sidebar = ({ user, drawerWidth, isSidebarOpen, setIsSidebarOpen, isNonMobi
                                         <Box display="flex" alignItems="center" ml="2rem">
                                             <Link href="/" sx={{ 
                                                 textDecoration: 'none', 
-                                                textShadow: '0 4px 12px rgba(255, 255, 255, 0.3)', 
-                                                color: theme.palette.mode === 'light' ? '#c28608' : '#997d3d',
+                                                color: theme.palette.mode === 'light' ? '#80471c;' : '#997d3d',
                                                 }}>
                                                 <Typography variant="h4" fontWeight="bold" sx={{
                                                     fontFamily: "Pacifico cursive",
-                                                    fontWeight: 400,
                                                     fontStyle: 'italic',
+                                                    fontWeight: 'bold',
+                                                    textShadow: '0 4px 4px rgb(3 13 12)'
                                                 }}>
                                                     Go_tech_School
                                                 </Typography>

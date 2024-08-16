@@ -109,7 +109,7 @@ const Profile = () => {
               >
                               {/* PhotoIcon at the bottom */}
               <IconButton
-                sx={{ position: 'absolute', bottom: '8px', left: isSmallScreen ? '4rem' : '8rem', zIndex: 100 }}
+                sx={{ position: 'absolute', bottom: '8px', left: isSmallScreen ? 'rem' : '8rem', zIndex: 100 }}
                 onClick={handleMenuOpen}
               >
                 <PhotoCamera
@@ -145,14 +145,20 @@ const Profile = () => {
               <Typography variant="body1" sx={{ 
                 fontStyle: 'italic', 
                 fontSize: isSmallScreen ? '18px' : '26px', 
-                ml: 2, 
-                pl: '6rem',
-                fontWeight: 'bold', 
-                color: '#3710b0db', 
+                ml: isSmallSize ? 12 : 20, 
+                p: '10px',
+                pl:'40px',
+                pr: '40px',
+                // fontWeight: 'bold', 
+                color: '#FFF', 
                 textShadow: '2px 2px 4px rgba(255, 255, 255, 0.7)',
-                // borderColor: '1px solid #fff'
+                background: '#0000008a',
+                fontFamily: "Pacifico cursive",
+                fontWeight: 400,
+                // fontStyle: 'italic',
+                borderRadius: '30%'
                 }}>
-                GO_TECH_SCHOOL
+                Go_Tech_School
               </Typography>
             </Box>
           </Box>
@@ -494,6 +500,9 @@ const Profile = () => {
                   </Box>
               </div>
         </div>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Pacifico&display=swap');
+        </style>
       </Box>
 
       {/* Footer section */}

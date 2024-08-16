@@ -347,9 +347,6 @@ const Timetable = () => {
   return (
     <div style={{ display: 'block', overflowX: 'hidden' }}>
       <Box sx={{ 
-        position: 'relative', 
-        display: 'grid', 
-        gridTemplateColumns: isSmallScreen ? '1fr' : '3fr 1fr'
          }}>
         <Box sx={{ padding: 2, display: 'block' }}>
           {/* First Sub-Container */}

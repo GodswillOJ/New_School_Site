@@ -166,7 +166,7 @@ const Message = () => {
                     gap: 1,
                     justifyContent: 'space-between',
                     ml: '10px',
-                    fontSize: isSmallScreen ? '8px' : '16px',
+                    fontSize: isSmallScreen ? '2px' : '16px',
                   }}
                 />
               </MenuItem>
