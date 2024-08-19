@@ -6,6 +6,7 @@ import { useSelector } from 'react-redux';
 import { themeSettings } from './theme';
 import HomeLayout from './Scenes/Layouts/HomeLayouts/index'
 import Home from './Scenes/Home/index';
+import AboutUs from './Scenes/Home/about';
 import Faces from './Scenes/Home/pages/faces';
 import Chemistry from './Scenes/Home/pages/chemistry';
 import Facilities from './Scenes/Home/pages/our_school';
@@ -55,6 +56,7 @@ function App() {
               <Route path='/excursions' element={<Excursion />} />
               <Route path='/courses' element={<Courses />} />
               <Route path="/login" element={<Login />} /> 
+              <Route path="/contact" element={<AboutUs />} /> 
               <Route path="/registerStudent" element={<Register />} />
               <Route path="/user_verify/:id" element={<UserVerify />} />
             </Route>

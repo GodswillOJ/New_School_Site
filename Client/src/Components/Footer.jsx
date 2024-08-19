@@ -72,7 +72,7 @@ const isSmallScreen = useMediaQuery('(max-width:600px)');
               fontStyle: 'normal', 
             }}
             >
-              Abule Egba, Lagos Nigeria. 
+              Address: No 47 Ajah Lekki Lagos Nigeria
             </Typography>
           </Box>
         </>

@@ -110,7 +110,7 @@ const Navbar = () => {
                     </NavLink>
                   </MenuItem>
                   <MenuItem onClick={handlePagesMenuOpen}>
-                    <NavLink href="/pages" color="inherit">
+                    <NavLink href="#" color="inherit">
                       Pages
                     </NavLink>
                   </MenuItem>
@@ -179,6 +179,15 @@ const Navbar = () => {
                       {isLoggedIn ? "Dashboard" : "Login"}
                     </NavLink>
                   </MenuItem>
+                  <MenuItem key="settings" onClick={handleMenuClose}>
+                      <IconButton onClick={() => dispatch(setMode())}>
+                        {theme.palette.mode === "dark" ? (
+                          <DarkModeOutlined sx={{ fontSize: "25px" }} />
+                        ) : (
+                          <LightModeOutlined sx={{ fontSize: "25px" }} />
+                        )}
+                      </IconButton>
+                    </MenuItem>
                   {isLoggedIn && (
                     <MenuItem onClick={handleLogout}>
                       Logout
