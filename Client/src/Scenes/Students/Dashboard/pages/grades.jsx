@@ -21,10 +21,13 @@ const Grades = () => {
         }}
       >
       <Typography variant="h4"
-        sx={{
-          backgroundColor: theme.palette.mode === 'light' ? '#0000005e' : theme.palette.background.alt,
-          color: '#fff'
-        }}
+          sx={{
+            backgroundColor: theme.palette.mode === 'light' ? '#0000005e' : theme.palette.background.alt,
+            color: '#fff',
+            textAlign: 'center',
+            padding: '0.5rem',
+            marginBottom: '1rem',
+          }}
       >Exams and Tests</Typography>
       <TableContainer component={Paper} sx={{ maxWidth: '100%', overflowX: 'auto' }}>
       <Table>
