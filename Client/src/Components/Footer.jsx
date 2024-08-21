@@ -16,14 +16,15 @@ const isSmallScreen = useMediaQuery('(max-width:600px)');
         src={school}
         width="100%"
         height="15rem"
-        bottom='0'
-        sx={{ objectFit: "cover" }}
+        position= 'absolute'
+        // bottom= '0'
+        sx={{ objectFit: "cover", mb: '0', overflowX: '0' }}
     />
     {/* Footer Box container */}
     <Box 
         sx={{ 
             position: 'absolute', 
-            top: 0, 
+            // bottom: 0, 
             left: 0,
             display: 'flex',
             flexDirection: isSmallScreen ? 'column' : 'row',

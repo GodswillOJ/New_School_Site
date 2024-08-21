@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Table, TableBody, TableCell, TableHead, TableRow, Typography } from '@mui/material';
+import { Box, Table, TableBody, TableCell, TableHead, TableRow, TableContainer, Paper, Typography } from '@mui/material';
 import Footer from 'Components/Footer';
 
 
@@ -29,26 +29,34 @@ const resultsData = examTestData.map(data => ({
 const Result = () => {
   return (
     <Box>
+      <div 
+        style={{
+          padding: '1rem',
+        }}
+      >
       <Typography variant="h4">Results</Typography>
-      <Table>
-        <TableHead>
-          <TableRow>
-            <TableCell>Subject</TableCell>
-            <TableCell>Total Marks (100 Marks)</TableCell>
-            <TableCell>Grade</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-          {resultsData.map((result, index) => (
-            <TableRow key={index}>
-              <TableCell>{result.subject}</TableCell>
-              <TableCell>{result.total}</TableCell>
-              <TableCell>{result.grade}</TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-
+            <TableContainer component={Paper} sx={{ maxWidth: '100%', overflowX: 'auto' }}>
+            <Table>
+              <TableHead>
+                <TableRow>
+                  <TableCell>Subject</TableCell>
+                  <TableCell>Total Marks (100 Marks)</TableCell>
+                  <TableCell>Grade</TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                {resultsData.map((result, index) => (
+                  <TableRow key={index}>
+                    <TableCell>{result.subject}</TableCell>
+                    <TableCell>{result.total}</TableCell>
+                    <TableCell>{result.grade}</TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+            </TableContainer>
+      </div>
+    
       <Footer/>
     </Box>
   );

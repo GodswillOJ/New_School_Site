@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Table, TableBody, TableCell, TableHead, TableRow, Typography } from '@mui/material';
+import { Box, useTheme, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper, Typography } from '@mui/material';
 import Footer from 'Components/Footer';
 
 
@@ -12,9 +12,28 @@ const assignmentData = [
 ];
 
 const Assignment = () => {
+  const theme = useTheme()
+
   return (
-    <Box>
-      <Typography variant="h4">Assignments</Typography>
+    <Box
+      sx={{
+        mb: '0',
+        overflowX: '0'
+      }}
+    >
+      <div
+        style={{
+          margin: '10px',
+          padding: '1rem',
+        }}
+      >
+      <Typography variant="h4"
+        sx={{
+          backgroundColor: theme.palette.mode === 'light' ? '#0000005e' : theme.palette.background.alt,
+          color: '#fff'
+        }}
+      >Assignments</Typography>
+      <TableContainer component={Paper} sx={{ maxWidth: '100%', overflowX: 'auto' }}>
       <Table>
         <TableHead>
           <TableRow>
@@ -31,6 +50,9 @@ const Assignment = () => {
           ))}
         </TableBody>
       </Table>
+      </TableContainer>
+
+      </div>
 
       <Footer/>
     </Box>
