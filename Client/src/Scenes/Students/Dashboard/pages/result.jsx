@@ -37,7 +37,6 @@ const theme = useTheme()
         }}
       >
       <Typography variant="h4"
-        variant="h4"
         sx={{
           backgroundColor: theme.palette.mode === 'light' ? '#0000005e' : theme.palette.background.alt,
           color: '#fff',
