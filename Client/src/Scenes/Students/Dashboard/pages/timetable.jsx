@@ -345,7 +345,7 @@ const Timetable = () => {
   };
 
   return (
-    <div style={{ display: 'block', overflowX: 'hidden' }}>
+    <div style={{ display: 'block', }}>
       <Box sx={{ 
          }}>
         <Box sx={{ padding: 2, display: 'block' }}>

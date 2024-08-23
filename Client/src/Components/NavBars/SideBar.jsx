@@ -94,7 +94,7 @@ const Sidebar = ({ user, drawerWidth, isSidebarOpen, setIsSidebarOpen, isNonMobi
                                         <Box display="flex" alignItems="center" ml="2rem">
                                             <Link href="/" sx={{ 
                                                 textDecoration: 'none', 
-                                                color: theme.palette.mode === 'light' ? '#80471c;' : '#997d3d',
+                                                color: theme.palette.mode === 'light' ? '#d1a440;' : '#d1a440',
                                                 }}>
                                                 <Typography variant="h4" fontWeight="bold" sx={{
                                                     fontFamily: "Pacifico cursive",

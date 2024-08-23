@@ -144,7 +144,7 @@ const Profile = () => {
 
               <Typography variant="body1" sx={{ 
                 fontStyle: 'italic', 
-                fontSize: isSmallScreen ? '18px' : '26px', 
+                fontSize: isSmallSize ? '10px' : '26px', 
                 ml: isSmallSize ? 12 : 20, 
                 p: '10px',
                 pl:'40px',
@@ -233,7 +233,7 @@ const Profile = () => {
 
 
         {/* Others section */}
-        <div style={{ display: 'block', mt: 4, padding: '12px', width: 'auto' }}>
+        <div style={{ display: 'block', margin: '4px 30px 0 30px', padding: '12px', width: 'auto' }}>
           {/* Content omitted for brevity */}
           <div>
                   {/* pagent */}

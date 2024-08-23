@@ -12,7 +12,7 @@ body{
   }
 
   .Home{
-    overflow-x: hidden;
+    overflow: hidden;
     margin: 0;
   }
 
