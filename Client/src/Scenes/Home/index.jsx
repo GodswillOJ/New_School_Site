@@ -67,7 +67,7 @@ const Home = () => {
   const videoId = '0alZJK3NBuM'; // Replace with the actual YouTube video ID
 
   return (
-    <div className='Home'>
+    <div>
       <Box sx={{ position: 'relative', width: '100%', boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.1)' }}>
         <Box
             component="img"

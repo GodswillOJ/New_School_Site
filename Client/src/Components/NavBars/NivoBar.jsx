@@ -8,7 +8,7 @@ const LibraryAccessData = () => {
     { category: 'Science', reads: 80 },
     { category: 'History', reads: 60 },
     { category: 'Archives', reads: 30 },
-    { category: 'Health and Biology', reads: 50 },
+    { category: 'Biology', reads: 50 },
     { category: 'Chemistry Textbooks', reads: 40 },
   ];
 
