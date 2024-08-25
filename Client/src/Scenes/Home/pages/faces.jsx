@@ -22,7 +22,9 @@ const Faces = () => {
 const isSmallScreen = useMediaQuery('(max-width:600px)');
 
   return (
-    <>
+    <div style={{
+      marginTop: '10rem',
+    }}>
     <Box sx={{ boxShadow: 3, p: 2, m: 2 }}>
       {facesData.map((face, index) => (
         <Box
@@ -59,7 +61,7 @@ const isSmallScreen = useMediaQuery('(max-width:600px)');
       ))}
     </Box>
     <Footer/>
-    </>
+    </div>
   );
 };
 

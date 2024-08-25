@@ -51,8 +51,8 @@ const Courses = () => {
 
 
   return (
-    <div style={{ display: 'block' }}>
-        <div style={{ display: isSmallScreen ? 'block' : 'flex', width: 'auto', padding: '40px' }}>
+    <div style={{ display: 'block', marginTop: '10rem', }}>
+        <div style={{ display: isSmallScreen ? 'block' : 'flex', width: 'auto', padding: '40px', marginBottom: '10rem' }}>
         <Box>
             <Typography variant="h4">Courses</Typography>
             <Button

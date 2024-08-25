@@ -43,7 +43,7 @@ const Chemistry = () => {
   ];
 
   return (
-    <div style={{ display: 'block', width: '100%' }}>
+    <div style={{ display: 'block', marginTop: '10rem', width: '100%' }}>
       {showVideo && (
         <Box
           sx={{

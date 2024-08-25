@@ -7,13 +7,14 @@ const AboutUs = () => {
     <div
         style={{
             position: 'relative',
-            display: 'block'
+            display: 'block',
+            marginTop: '10rem',
         }}
     >
     <Box sx={{
         display: 'block',
         padding: '20px',
-        mb:'40px'
+        mb:'60px'
     }}>
       <Box display="block">
         <Typography variant="h4"

@@ -44,7 +44,7 @@ const Facilities = () => {
   };
 
   return (
-    <div style={{ position: 'relative', display: 'block' }}>
+    <div style={{ position: 'relative', display: 'block', marginTop: '10rem', }}>
       <Box sx={{ margin: isSmallScreen ? '1rem 1rem 1rem 1rem' : '1rem 4rem 1rem 4rem', borderRadius: '5px', }}>
         <Swiper
           spaceBetween={30}

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { AppBar, Box, Typography, Link, IconButton, Menu, useTheme, MenuItem, useMediaQuery } from '@mui/material';
-import { LightModeOutlined, DarkModeOutlined } from '@mui/icons-material'
+import { LightModeOutlined, DarkModeOutlined } from '@mui/icons-material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { styled } from '@mui/system';
 import { useSelector, useDispatch } from 'react-redux';
@@ -26,7 +26,7 @@ const Navbar = () => {
   const [anchorEl, setAnchorEl] = useState(null);
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const theme = useTheme()
+  const theme = useTheme();
 
   const handleMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
@@ -49,7 +49,7 @@ const Navbar = () => {
 
   return (
     <AppBar 
-      position="static"
+      position="fixed" // Change from "static" to "fixed"
       sx={{ background: 'none', padding: 0, margin: 0, boxShadow: 'none', width: '100%' }}
     >
       <Box sx={{ width: '100%', padding: 0, margin: 0 }}>
@@ -75,7 +75,12 @@ const Navbar = () => {
           </FlexBetweenBox>
           
           {/* Logo and Menu Section */}
-          <FlexBetweenBox sx={{ width: '100%', padding: 1, boxShadow: '0 4px 12px rgba(255, 255, 255, 0.1)', }}>
+          <FlexBetweenBox sx={{ width: '100%',
+             padding: 1, 
+             boxShadow: '0 4px 12px rgba(255, 255, 255, 0.1)', 
+             backgroundColor: theme.palette.mode === 'light' ? '#fff' : theme.palette.background.alt,
+             boxShadow: theme.palette.mode === 'light' ? '0 4px 12px rgba(0, 0, 0, 0.1)' : '0 4px 12px rgba(255, 255, 255, 0.3)',
+              }}>
             <Link href='/'>
               <Typography variant="h6" sx={{ 
                   margin: 1, 

@@ -51,7 +51,7 @@ const Excursion = () => {
   ];
 
   return (
-    <div style={{ display: 'block' }}>
+    <div style={{ display: 'block', marginTop: '10rem', }}>
       <div style={{ display: isSmallScreen ? 'block' : 'flex', width: 'auto', padding: '40px' }}>
 
         <div style={{

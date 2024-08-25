@@ -106,7 +106,9 @@ const Tutors = () => {
     };
   
   return (
-    <>
+    <div style={{
+      marginTop: '10rem',
+    }}>
     <Modal open={open} onClose={handleClose}>
     <Box
         sx={{
@@ -435,7 +437,7 @@ const Tutors = () => {
       </Box>
 
       <Footer/>
-    </>
+    </div>
   );
 };
 
